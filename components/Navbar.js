@@ -4,9 +4,10 @@ import { useState, useEffect } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { Switch } from 'antd'
 import { Sun, Moon, GraduationCap } from 'lucide-react'
+import { useTheme } from '@/contexts/ThemeContext'
 
 export default function Navbar() {
-  const [isDarkMode, setIsDarkMode] = useState(false)
+  const { isDarkMode, toggleTheme } = useTheme()
   const [isScrolled, setIsScrolled] = useState(false)
   const { scrollY } = useScroll()
   
@@ -14,9 +15,6 @@ export default function Navbar() {
   const navbarOpacity = useTransform(scrollY, [0, 50], [0.95, 1])
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme')
-    setIsDarkMode(savedTheme === 'dark')
-
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20)
     }
@@ -24,19 +22,6 @@ export default function Navbar() {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
-
-  const toggleTheme = () => {
-    const newTheme = !isDarkMode
-    setIsDarkMode(newTheme)
-    
-    if (newTheme) {
-      document.documentElement.classList.add('dark')
-      localStorage.setItem('theme', 'dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-      localStorage.setItem('theme', 'light')
-    }
-  }
 
   const navItems = [
     { name: 'Home', href: '#home' },
