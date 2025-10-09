@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --primary-blue: #2563EB;
-  --primary-blue-light: #60A5FA;
-  --primary-green: #22C55E;
-  --primary-green-light: #86EFAC;
+  --primary-yellow: #FACC15;
+  --primary-yellow-light: #FDE047;
+  --primary-black: #0A0A0A;
+  --primary-off-white: #FFFDF5;
 }
 
 * {
@@ -25,20 +25,20 @@ body {
 
 /* Glass morphism effect */
 .glass-effect {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 253, 245, 0.1);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(0, 0, 0, 0.15);
 }
 
 .dark .glass-effect {
-  background: rgba(17, 24, 39, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(10, 10, 10, 0.8);
+  border: 2px solid rgba(245, 245, 245, 0.2);
 }
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(90deg, #2563EB, #22C55E);
+  background: linear-gradient(90deg, #FACC15, #FDE047);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -66,7 +66,7 @@ body {
   height: 2px;
   bottom: -4px;
   left: 0;
-  background: linear-gradient(90deg, #2563EB, #22C55E);
+  background: linear-gradient(90deg, #FACC15, #FDE047);
   transition: width 0.3s ease;
 }
 
@@ -84,12 +84,12 @@ body {
 }
 
 /* Neon glow effect */
-.neon-glow-blue {
-  box-shadow: 0 0 20px rgba(37, 99, 235, 0.5);
+.neon-glow-yellow {
+  box-shadow: 0 0 20px rgba(250, 204, 21, 0.5);
 }
 
-.neon-glow-green {
-  box-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
+.dark .neon-glow-yellow {
+  box-shadow: 0 0 20px rgba(253, 224, 71, 0.6);
 }
 
 /* Floating animation for icons */
@@ -137,9 +137,9 @@ body {
 
 /* Ant Design customization */
 .ant-carousel .slick-dots li button {
-  background: #2563EB !important;
+  background: #FACC15 !important;
 }
 
 .ant-carousel .slick-dots li.slick-active button {
-  background: #22C55E !important;
+  background: #FDE047 !important;
 }

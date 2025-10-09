@@ -33,10 +33,10 @@ export default function Footer() {
   }
 
   const socialLinks = [
-    { icon: Facebook, href: '#', color: 'hover:text-blue-500' },
-    { icon: Linkedin, href: '#', color: 'hover:text-blue-600' },
-    { icon: MessageCircle, href: '#', color: 'hover:text-green-500' },
-    { icon: Twitter, href: '#', color: 'hover:text-blue-400' },
+    { icon: Facebook, href: '#', color: 'hover:text-primary-yellow-light' },
+    { icon: Linkedin, href: '#', color: 'hover:text-primary-yellow-light' },
+    { icon: MessageCircle, href: '#', color: 'hover:text-primary-yellow-light' },
+    { icon: Twitter, href: '#', color: 'hover:text-primary-yellow-light' },
   ]
 
   const containerVariants = {
@@ -59,14 +59,14 @@ export default function Footer() {
   }
 
   return (
-    <footer id="footer" className="relative bg-gray-900 text-white overflow-hidden">
+    <footer id="footer" className="relative bg-[#0A0A0A] text-white overflow-hidden border-t-2 border-primary-yellow dark:border-primary-yellow-light">
       {/* Gradient Background Lines */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-green-500" />
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-yellow via-primary-yellow-light to-primary-yellow" />
         <motion.div
           className="absolute inset-0 opacity-10"
           style={{
-            backgroundImage: 'linear-gradient(to bottom, transparent 95%, rgba(37, 99, 235, 0.3) 95%)',
+            backgroundImage: 'linear-gradient(to bottom, transparent 95%, rgba(250, 204, 21, 0.3) 95%)',
             backgroundSize: '100% 50px',
           }}
         />
@@ -108,7 +108,7 @@ export default function Footer() {
 
           {/* Quick Links - Company */}
           <motion.div variants={itemVariants}>
-            <h4 className="text-lg font-bold mb-4 text-primary-blue-light">
+            <h4 className="text-lg font-bold mb-4 text-primary-yellow-light">
               Company
             </h4>
             <ul className="space-y-2">
@@ -116,7 +116,7 @@ export default function Footer() {
                 <li key={index}>
                   <motion.a
                     href={link.href}
-                    className="text-gray-400 hover:text-primary-green transition-colors duration-300 hover-underline"
+                    className="text-gray-400 hover:text-primary-yellow-light transition-colors duration-300 hover-underline"
                     whileHover={{ x: 5 }}
                   >
                     {link.name}
@@ -128,7 +128,7 @@ export default function Footer() {
 
           {/* Quick Links - For Students */}
           <motion.div variants={itemVariants}>
-            <h4 className="text-lg font-bold mb-4 text-primary-blue-light">
+            <h4 className="text-lg font-bold mb-4 text-primary-yellow-light">
               For Students
             </h4>
             <ul className="space-y-2">
@@ -136,7 +136,7 @@ export default function Footer() {
                 <li key={index}>
                   <motion.a
                     href={link.href}
-                    className="text-gray-400 hover:text-primary-green transition-colors duration-300 hover-underline"
+                    className="text-gray-400 hover:text-primary-yellow-light transition-colors duration-300 hover-underline"
                     whileHover={{ x: 5 }}
                   >
                     {link.name}
@@ -148,7 +148,7 @@ export default function Footer() {
 
           {/* Quick Links - For Teachers */}
           <motion.div variants={itemVariants}>
-            <h4 className="text-lg font-bold mb-4 text-primary-blue-light">
+            <h4 className="text-lg font-bold mb-4 text-primary-yellow-light">
               For Teachers
             </h4>
             <ul className="space-y-2">
@@ -156,7 +156,7 @@ export default function Footer() {
                 <li key={index}>
                   <motion.a
                     href={link.href}
-                    className="text-gray-400 hover:text-primary-green transition-colors duration-300 hover-underline"
+                    className="text-gray-400 hover:text-primary-yellow-light transition-colors duration-300 hover-underline"
                     whileHover={{ x: 5 }}
                   >
                     {link.name}
@@ -168,7 +168,7 @@ export default function Footer() {
 
           {/* Quick Links - Support */}
           <motion.div variants={itemVariants}>
-            <h4 className="text-lg font-bold mb-4 text-primary-blue-light">
+            <h4 className="text-lg font-bold mb-4 text-primary-yellow-light">
               Support
             </h4>
             <ul className="space-y-2">
@@ -176,7 +176,7 @@ export default function Footer() {
                 <li key={index}>
                   <motion.a
                     href={link.href}
-                    className="text-gray-400 hover:text-primary-green transition-colors duration-300 hover-underline"
+                    className="text-gray-400 hover:text-primary-yellow-light transition-colors duration-300 hover-underline"
                     whileHover={{ x: 5 }}
                   >
                     {link.name}
@@ -253,12 +253,12 @@ export default function Footer() {
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 px-6 py-3 rounded-full bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-primary-blue transition-colors"
+              className="flex-1 px-6 py-3 rounded-full bg-black border-2 border-white text-white placeholder-gray-500 focus:outline-none focus:border-primary-yellow transition-colors"
             />
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 bg-gradient-to-r from-blue-500 to-green-500 text-white rounded-full font-semibold hover:shadow-lg transition-shadow"
+              className="px-8 py-3 bg-primary-yellow text-black border-2 border-black dark:bg-primary-yellow-light dark:border-white rounded-full font-semibold hover:shadow-lg transition-shadow"
             >
               Subscribe
             </motion.button>
