@@ -52,7 +52,7 @@ export default function Testimonials() {
   ]
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-gradient-to-br from-blue-50 via-purple-50 to-green-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-gradient-to-br from-[#FFFDF5] via-[#FEF9E7] to-[#FEF3C7] dark:from-[#0A0A0A] dark:via-[#1A1A1A] dark:to-[#0A0A0A]">
       {/* Floating Stars Background */}
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(20)].map((_, i) => (
@@ -120,10 +120,10 @@ export default function Testimonials() {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl p-8 md:p-12 backdrop-blur-sm border-2 border-blue-200 dark:border-blue-800 relative overflow-hidden">
+                  <div className="bg-white dark:bg-black rounded-3xl shadow-2xl p-8 md:p-12 backdrop-blur-sm border-2 border-black dark:border-white relative overflow-hidden">
                     {/* Quote Icon */}
                     <motion.div
-                      className="absolute top-4 right-4 text-blue-200 dark:text-blue-900 opacity-50"
+                      className="absolute top-4 right-4 text-primary-yellow dark:text-primary-yellow-light opacity-50"
                       animate={{ rotate: [0, 5, 0] }}
                       transition={{ duration: 2, repeat: Infinity }}
                     >
@@ -154,7 +154,7 @@ export default function Testimonials() {
                               defaultValue={testimonial.rating}
                               className="text-sm"
                             />
-                            <span className="text-sm font-semibold text-primary-blue dark:text-primary-green">
+                            <span className="text-sm font-semibold text-primary-yellow dark:text-primary-yellow-light">
                               {testimonial.subject}
                             </span>
                           </div>
@@ -212,7 +212,7 @@ export default function Testimonials() {
           ].map((stat, index) => (
             <motion.div
               key={index}
-              className="text-center p-6 rounded-xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-gray-200 dark:border-gray-700"
+              className="text-center p-6 rounded-xl bg-white/50 dark:bg-black/50 backdrop-blur-sm border-2 border-black dark:border-white"
               whileHover={{ scale: 1.05, y: -5 }}
               transition={{ type: 'spring', stiffness: 300 }}
             >
@@ -223,7 +223,7 @@ export default function Testimonials() {
               >
                 {stat.icon}
               </motion.div>
-              <h4 className="text-2xl font-bold text-primary-blue dark:text-primary-green mb-1">
+              <h4 className="text-2xl font-bold text-primary-yellow dark:text-primary-yellow-light mb-1">
                 {stat.value}
               </h4>
               <p className="text-sm text-gray-600 dark:text-gray-400">

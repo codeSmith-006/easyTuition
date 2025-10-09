@@ -46,9 +46,9 @@ export default function Hero() {
 
   // Trust badges
   const trustBadges = [
-    { icon: CheckCircle, text: 'Verified Teachers', color: 'text-green-500' },
-    { icon: DollarSign, text: 'Affordable Tuitions', color: 'text-blue-500' },
-    { icon: Clock, text: 'Flexible Scheduling', color: 'text-purple-500' },
+    { icon: CheckCircle, text: 'Verified Teachers', color: 'text-primary-yellow dark:text-primary-yellow-light' },
+    { icon: DollarSign, text: 'Affordable Tuitions', color: 'text-primary-yellow dark:text-primary-yellow-light' },
+    { icon: Clock, text: 'Flexible Scheduling', color: 'text-primary-yellow dark:text-primary-yellow-light' },
   ]
 
   const containerVariants = {
@@ -81,13 +81,13 @@ export default function Hero() {
   }
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-gradient-to-br from-blue-50 via-cyan-50 to-teal-50 dark:from-slate-900 dark:via-blue-900 dark:to-emerald-900">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-gradient-to-br from-[#FFFDF5] via-[#FEF9E7] to-[#FEF3C7] dark:from-[#0A0A0A] dark:via-[#1A1A1A] dark:to-[#0A0A0A]">
       {/* Animated Background Particles */}
       <div className="absolute inset-0 overflow-hidden">
         {floatingParticles.map(({ Icon, delay, x, y, size }, index) => (
           <motion.div
             key={index}
-            className="absolute text-blue-400 dark:text-teal-400 opacity-10"
+            className="absolute text-primary-yellow dark:text-primary-yellow-light opacity-10"
             style={{ left: x, top: y }}
             initial={{ opacity: 0, scale: 0 }}
             animate={{
@@ -110,7 +110,7 @@ export default function Hero() {
         
         {/* Gradient Orbs */}
         <motion.div
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-300 dark:bg-blue-600 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-30 dark:opacity-20"
+          className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-yellow dark:bg-primary-yellow-light rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-20 dark:opacity-10"
           animate={{
             scale: [1, 1.3, 1],
             x: [0, 100, 0],
@@ -123,7 +123,7 @@ export default function Hero() {
           }}
         />
         <motion.div
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-teal-300 dark:bg-emerald-600 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-30 dark:opacity-20"
+          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary-yellow-light dark:bg-primary-yellow rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-20 dark:opacity-10"
           animate={{
             scale: [1, 1.4, 1],
             x: [0, -100, 0],
@@ -151,9 +151,9 @@ export default function Hero() {
             {/* Headline with Typing Effect */}
             <motion.h1
               variants={slideInLeft}
-              className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-blue-600 dark:text-white"
+              className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-gray-900 dark:text-white"
             >
-              <span className="bg-gradient-to-r from-blue-600 to-teal-500 dark:from-white dark:to-emerald-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-primary-yellow to-primary-yellow-light dark:from-primary-yellow-light dark:to-primary-yellow bg-clip-text text-transparent"
                 {typedText}
                 {showCursor && <span className="typing-cursor">|</span>}
               </span>
@@ -170,8 +170,8 @@ export default function Hero() {
             {/* Search Bar Widget */}
             <motion.div
               variants={slideInLeft}
-              className={`bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-6 mb-8 border-2 ${
-                searchFocused ? 'border-teal-500 dark:border-teal-400' : 'border-transparent'
+              className={`bg-white dark:bg-[#0A0A0A] rounded-2xl shadow-2xl p-6 mb-8 border-2 ${
+                searchFocused ? 'border-black dark:border-white' : 'border-black/20 dark:border-white/20'
               } transition-all duration-300`}
               whileHover={{ scale: 1.02, y: -2 }}
             >
@@ -216,7 +216,7 @@ export default function Hero() {
               </div>
               
               <motion.button
-                className="w-full mt-4 bg-gradient-to-r from-teal-500 to-emerald-500 text-white font-semibold py-3 px-6 rounded-xl flex items-center justify-center space-x-2 hover:shadow-lg transition-all"
+                className="w-full mt-4 bg-primary-yellow text-black border-2 border-black dark:bg-primary-yellow-light dark:border-white font-semibold py-3 px-6 rounded-xl flex items-center justify-center space-x-2 hover:shadow-lg transition-all dark:shadow-[0_0_20px_rgba(253,224,71,0.5)]"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -235,8 +235,8 @@ export default function Hero() {
                 return (
                   <motion.div
                     key={index}
-                    className="flex items-center space-x-2 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm px-4 py-2 rounded-full border border-gray-200 dark:border-gray-700"
-                    whileHover={{ scale: 1.05, boxShadow: '0 0 20px rgba(20, 184, 166, 0.3)' }}
+                    className="flex items-center space-x-2 bg-white/50 dark:bg-black/50 backdrop-blur-sm px-4 py-2 rounded-full border-2 border-black dark:border-white"
+                    whileHover={{ scale: 1.05, boxShadow: '0 0 20px rgba(250, 204, 21, 0.3)' }}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 1.5 + index * 0.1 }}
@@ -258,14 +258,14 @@ export default function Hero() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="group relative px-8 py-4 bg-gradient-to-r from-teal-500 to-emerald-500 text-white rounded-xl font-semibold text-lg shadow-lg overflow-hidden"
+                className="group relative px-8 py-4 bg-primary-yellow text-black border-2 border-black dark:bg-primary-yellow-light dark:border-white rounded-xl font-semibold text-lg shadow-lg overflow-hidden"
               >
                 <span className="relative z-10 flex items-center justify-center space-x-2">
                   <Search className="w-5 h-5" />
                   <span>Find Tuition</span>
                 </span>
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-teal-400 to-emerald-400"
+                  className="absolute inset-0 bg-primary-yellow-light dark:bg-primary-yellow"
                   initial={{ scale: 0, opacity: 0 }}
                   whileHover={{ scale: 1, opacity: 1 }}
                   transition={{ duration: 0.3 }}
@@ -275,7 +275,7 @@ export default function Hero() {
               <motion.button
                 whileHover={{ scale: 1.05, x: 5 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 border-2 border-teal-500 dark:border-teal-400 text-teal-600 dark:text-teal-400 rounded-xl font-semibold text-lg hover:bg-teal-50 dark:hover:bg-teal-900/20 transition-all flex items-center justify-center space-x-2"
+                className="px-8 py-4 border-2 border-black dark:border-white text-black dark:text-white rounded-xl font-semibold text-lg hover:bg-primary-yellow/10 dark:hover:bg-primary-yellow-light/10 transition-all flex items-center justify-center space-x-2"
               >
                 <GraduationCap className="w-5 h-5" />
                 <span>Become a Teacher</span>
@@ -304,7 +304,7 @@ export default function Hero() {
               className="relative w-full max-w-lg"
             >
               {/* Student with Laptop Illustration */}
-              <div className="bg-gradient-to-br from-white/80 to-white/60 dark:from-gray-800/80 dark:to-gray-700/60 backdrop-blur-xl rounded-3xl shadow-2xl p-12 border border-gray-200 dark:border-gray-700">
+              <div className="bg-gradient-to-br from-white/80 to-white/60 dark:from-black/80 dark:to-black/60 backdrop-blur-xl rounded-3xl shadow-2xl p-12 border-2 border-black dark:border-white">
                 <div className="text-center space-y-6">
                   <motion.div
                     animate={{ rotate: [0, 5, -5, 0] }}
@@ -346,7 +346,7 @@ export default function Hero() {
                 return (
                   <motion.div
                     key={index}
-                    className="absolute bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-4 border-2 border-teal-500 dark:border-teal-400"
+                    className="absolute bg-white dark:bg-black rounded-2xl shadow-xl p-4 border-2 border-black dark:border-white"
                     initial={{ opacity: 0, scale: 0, rotate: -180 }}
                     animate={{ opacity: 1, scale: 1, rotate: 0 }}
                     transition={{
@@ -362,8 +362,8 @@ export default function Hero() {
                     }}
                   >
                     <div className="flex items-center space-x-3">
-                      <div className="bg-teal-100 dark:bg-teal-900 p-2 rounded-lg">
-                        <Icon className="w-6 h-6 text-teal-600 dark:text-teal-400" />
+                      <div className="bg-primary-yellow/20 dark:bg-primary-yellow-light/20 p-2 rounded-lg border border-black dark:border-white">
+                        <Icon className="w-6 h-6 text-primary-yellow dark:text-primary-yellow-light" />
                       </div>
                       <div>
                         <p className="text-2xl font-bold text-gray-800 dark:text-white">

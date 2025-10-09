@@ -68,7 +68,7 @@ export default function Features() {
   return (
     <section id="features" className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Background alternating colors */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-50 to-green-50 dark:via-gray-800 dark:to-gray-900 opacity-50" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary-yellow/10 to-primary-yellow-light/10 dark:via-black/50 dark:to-black opacity-50" />
       
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header */}
@@ -121,26 +121,15 @@ export default function Features() {
                 }}
               >
                 <motion.div
-                  className={`card-tilt relative h-full p-8 rounded-2xl backdrop-blur-sm border-2 transition-all duration-300 ${
-                    feature.color === 'blue'
-                      ? 'bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800 hover:border-blue-400'
-                      : 'bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800 hover:border-green-400'
-                  }`}
+                  className={`card-tilt relative h-full p-8 rounded-2xl backdrop-blur-sm border-2 transition-all duration-300 bg-white dark:bg-black border-black dark:border-white hover:shadow-[0_0_20px_rgba(250,204,21,0.3)] dark:hover:shadow-[0_0_20px_rgba(253,224,71,0.4)]`}
                   whileHover={{
                     scale: 1.05,
-                    boxShadow:
-                      feature.color === 'blue'
-                        ? '0 20px 40px rgba(37, 99, 235, 0.3)'
-                        : '0 20px 40px rgba(34, 197, 94, 0.3)',
+                    boxShadow: '0 20px 40px rgba(250, 204, 21, 0.3)',
                   }}
                 >
                   {/* Icon */}
                   <motion.div
-                    className={`inline-flex p-4 rounded-xl mb-6 ${
-                      feature.color === 'blue'
-                        ? 'bg-blue-500 text-white'
-                        : 'bg-green-500 text-white'
-                    }`}
+                    className={`inline-flex p-4 rounded-xl mb-6 bg-primary-yellow text-black border-2 border-black dark:bg-primary-yellow-light dark:border-white dark:text-black`}
                     whileHover={{ rotate: 360, scale: 1.1 }}
                     transition={{ duration: 0.6 }}
                   >
@@ -159,9 +148,7 @@ export default function Features() {
 
                   {/* Decorative corner element */}
                   <motion.div
-                    className={`absolute top-4 right-4 w-2 h-2 rounded-full ${
-                      feature.color === 'blue' ? 'bg-blue-400' : 'bg-green-400'
-                    }`}
+                    className={`absolute top-4 right-4 w-2 h-2 rounded-full bg-primary-yellow dark:bg-primary-yellow-light`}
                     animate={{
                       scale: [1, 1.5, 1],
                       opacity: [0.5, 1, 0.5],
@@ -193,7 +180,7 @@ export default function Features() {
           ].map((stat, index) => (
             <motion.div
               key={index}
-              className="text-center p-6 rounded-xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm"
+              className="text-center p-6 rounded-xl bg-white/50 dark:bg-black/50 backdrop-blur-sm border-2 border-black dark:border-white"
               whileHover={{ scale: 1.05, y: -5 }}
               transition={{ type: 'spring', stiffness: 300 }}
             >

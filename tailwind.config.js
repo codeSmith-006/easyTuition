@@ -10,16 +10,16 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          blue: '#2563EB',
-          'blue-light': '#60A5FA',
-          green: '#22C55E',
-          'green-light': '#86EFAC',
+          yellow: '#FACC15',
+          'yellow-light': '#FDE047',
+          black: '#0A0A0A',
+          'off-white': '#FFFDF5',
         },
       },
       backgroundImage: {
-        'gradient-light': 'linear-gradient(to bottom right, #eff6ff, #f0fdf4)',
-        'gradient-dark': 'linear-gradient(to bottom right, #111827, #1f2937)',
-        'gradient-blue-green': 'linear-gradient(to right, #2563EB, #22C55E)',
+        'gradient-light': 'linear-gradient(to bottom right, #FFFDF5, #FEF9E7)',
+        'gradient-dark': 'linear-gradient(to bottom right, #0A0A0A, #1A1A1A)',
+        'gradient-yellow': 'linear-gradient(to right, #FACC15, #FDE047)',
       },
       animation: {
         'pulse-glow': 'pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
@@ -28,8 +28,8 @@ module.exports = {
       },
       keyframes: {
         'pulse-glow': {
-          '0%, 100%': { boxShadow: '0 0 20px rgba(34, 197, 94, 0.5)' },
-          '50%': { boxShadow: '0 0 40px rgba(34, 197, 94, 0.8)' },
+          '0%, 100%': { boxShadow: '0 0 20px rgba(250, 204, 21, 0.5)' },
+          '50%': { boxShadow: '0 0 40px rgba(250, 204, 21, 0.8)' },
         },
         'float': {
           '0%, 100%': { transform: 'translateY(0px)' },
