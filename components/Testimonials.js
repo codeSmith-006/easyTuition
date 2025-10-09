@@ -52,7 +52,7 @@ export default function Testimonials() {
   ]
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-gradient-to-br from-[#FFFDF5] via-[#FEF9E7] to-[#FEF3C7] dark:from-[#0A0A0A] dark:via-[#1A1A1A] dark:to-[#0A0A0A]">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-gradient-light dark:bg-gradient-dark">
       {/* Floating Stars Background */}
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(20)].map((_, i) => (
@@ -120,7 +120,7 @@ export default function Testimonials() {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <div className="bg-white dark:bg-black rounded-3xl shadow-2xl p-8 md:p-12 backdrop-blur-sm border-2 border-black dark:border-white relative overflow-hidden">
+                  <div className="bg-white dark:bg-primary-charcoal rounded-3xl shadow-2xl p-8 md:p-12 backdrop-blur-sm border border-slate-300 dark:border-slate-600 relative overflow-hidden">
                     {/* Quote Icon */}
                     <motion.div
                       className="absolute top-4 right-4 text-primary-yellow dark:text-primary-yellow-light opacity-50"
@@ -212,7 +212,7 @@ export default function Testimonials() {
           ].map((stat, index) => (
             <motion.div
               key={index}
-              className="text-center p-6 rounded-xl bg-white/50 dark:bg-black/50 backdrop-blur-sm border-2 border-black dark:border-white"
+              className="text-center p-6 rounded-xl bg-white/50 dark:bg-primary-charcoal/50 backdrop-blur-sm border border-slate-300 dark:border-slate-600"
               whileHover={{ scale: 1.05, y: -5 }}
               transition={{ type: 'spring', stiffness: 300 }}
             >

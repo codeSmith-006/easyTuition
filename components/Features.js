@@ -68,7 +68,7 @@ export default function Features() {
   return (
     <section id="features" className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Background alternating colors */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary-yellow/10 to-primary-yellow-light/10 dark:via-black/50 dark:to-black opacity-50" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary-yellow/5 to-primary-yellow-light/5 dark:via-primary-charcoal-dark/50 dark:to-primary-charcoal opacity-50" />
       
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header */}
@@ -121,7 +121,7 @@ export default function Features() {
                 }}
               >
                 <motion.div
-                  className={`card-tilt relative h-full p-8 rounded-2xl backdrop-blur-sm border-2 transition-all duration-300 bg-white dark:bg-black border-black dark:border-white hover:shadow-[0_0_20px_rgba(250,204,21,0.3)] dark:hover:shadow-[0_0_20px_rgba(253,224,71,0.4)]`}
+                  className={`card-tilt relative h-full p-8 rounded-2xl backdrop-blur-sm border transition-all duration-300 bg-white dark:bg-primary-charcoal border-slate-300 dark:border-slate-600 hover:border-primary-yellow dark:hover:border-primary-yellow-light hover:shadow-[0_0_20px_rgba(250,204,21,0.3)] dark:hover:shadow-[0_0_20px_rgba(253,224,71,0.4)]`}
                   whileHover={{
                     scale: 1.05,
                     boxShadow: '0 20px 40px rgba(250, 204, 21, 0.3)',
@@ -129,7 +129,7 @@ export default function Features() {
                 >
                   {/* Icon */}
                   <motion.div
-                    className={`inline-flex p-4 rounded-xl mb-6 bg-primary-yellow text-black border-2 border-black dark:bg-primary-yellow-light dark:border-white dark:text-black`}
+                    className={`inline-flex p-4 rounded-xl mb-6 bg-primary-yellow text-primary-charcoal border border-primary-charcoal dark:bg-primary-yellow-light/20 dark:border-primary-yellow-light dark:text-primary-yellow-light`}
                     whileHover={{ rotate: 360, scale: 1.1 }}
                     transition={{ duration: 0.6 }}
                   >
@@ -180,7 +180,7 @@ export default function Features() {
           ].map((stat, index) => (
             <motion.div
               key={index}
-              className="text-center p-6 rounded-xl bg-white/50 dark:bg-black/50 backdrop-blur-sm border-2 border-black dark:border-white"
+              className="text-center p-6 rounded-xl bg-white/50 dark:bg-primary-charcoal/50 backdrop-blur-sm border border-slate-300 dark:border-slate-600"
               whileHover={{ scale: 1.05, y: -5 }}
               transition={{ type: 'spring', stiffness: 300 }}
             >

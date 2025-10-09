@@ -12,13 +12,15 @@ module.exports = {
         primary: {
           yellow: '#FACC15',
           'yellow-light': '#FDE047',
-          black: '#0A0A0A',
-          'off-white': '#FFFDF5',
+          'yellow-dark': '#EAB308',
+          charcoal: '#1E293B',
+          'charcoal-dark': '#0F172A',
+          'gray-light': '#F9FAFB',
         },
       },
       backgroundImage: {
-        'gradient-light': 'linear-gradient(to bottom right, #FFFDF5, #FEF9E7)',
-        'gradient-dark': 'linear-gradient(to bottom right, #0A0A0A, #1A1A1A)',
+        'gradient-light': 'linear-gradient(135deg, #F9FAFB 0%, rgba(253, 224, 71, 0.12) 100%)',
+        'gradient-dark': 'linear-gradient(to bottom right, #0F172A, #1E293B)',
         'gradient-yellow': 'linear-gradient(to right, #FACC15, #FDE047)',
       },
       animation: {

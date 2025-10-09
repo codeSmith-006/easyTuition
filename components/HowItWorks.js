@@ -33,7 +33,7 @@ export default function HowItWorks() {
       color: 'from-primary-yellow to-primary-yellow-light',
       accentColor: 'text-primary-yellow dark:text-primary-yellow-light',
       bgColor: 'bg-primary-yellow/10 dark:bg-primary-yellow-light/10',
-      iconBg: 'bg-primary-yellow border-2 border-black dark:border-white',
+      iconBg: 'bg-primary-yellow border border-primary-charcoal dark:border-slate-600',
       stats: { value: '500+', label: 'Teachers' },
     },
     {
@@ -50,7 +50,7 @@ export default function HowItWorks() {
       color: 'from-primary-yellow to-primary-yellow-light',
       accentColor: 'text-primary-yellow dark:text-primary-yellow-light',
       bgColor: 'bg-primary-yellow/10 dark:bg-primary-yellow-light/10',
-      iconBg: 'bg-primary-yellow-light border-2 border-black dark:border-white',
+      iconBg: 'bg-primary-yellow-light border border-primary-charcoal dark:border-slate-600',
       stats: { value: '24/7', label: 'Support' },
     },
     {
@@ -76,7 +76,7 @@ export default function HowItWorks() {
     <section
       id="how-it-works"
       ref={containerRef}
-      className="relative py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#FFFDF5] via-[#FEF9E7] to-[#FFFDF5] dark:from-[#0A0A0A] dark:via-[#1A1A1A] dark:to-[#0A0A0A] overflow-hidden"
+      className="relative py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-primary-gray-light via-white to-primary-gray-light dark:from-primary-charcoal-dark dark:via-primary-charcoal dark:to-primary-charcoal-dark overflow-hidden"
     >
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -118,7 +118,7 @@ export default function HowItWorks() {
           transition={{ duration: 0.6 }}
         >
           <motion.div
-            className="inline-flex items-center space-x-2 px-4 py-2 bg-primary-yellow/10 dark:bg-primary-yellow-light/10 border-2 border-black dark:border-white rounded-full mb-6"
+            className="inline-flex items-center space-x-2 px-4 py-2 bg-primary-yellow/10 dark:bg-primary-yellow-light/10 border border-slate-300 dark:border-slate-600 rounded-full mb-6"
             whileHover={{ scale: 1.05 }}
           >
             <Sparkles className="w-4 h-4 text-primary-yellow dark:text-primary-yellow-light" />
@@ -170,7 +170,7 @@ export default function HowItWorks() {
                       whileHover={{ scale: 1.02 }}
                       transition={{ type: 'spring', stiffness: 300 }}
                     >
-                      <div className={`relative p-8 rounded-3xl backdrop-blur-xl border-2 ${step.bgColor} border-black dark:border-white shadow-xl hover:shadow-2xl transition-all duration-300`}>
+                      <div className={`relative p-8 rounded-3xl backdrop-blur-xl border ${step.bgColor} border-slate-300 dark:border-slate-600 hover:border-primary-yellow dark:hover:border-primary-yellow-light shadow-xl hover:shadow-2xl transition-all duration-300`}>
                         {/* Decorative corner */}
                         <motion.div
                           className={`absolute top-4 ${isEven ? 'right-4' : 'left-4'} w-12 h-12 bg-gradient-to-br ${step.color} rounded-2xl opacity-20`}
@@ -223,7 +223,7 @@ export default function HowItWorks() {
 
                         {/* Stats Badge */}
                         <motion.div
-                          className={`inline-flex items-center space-x-2 mt-6 px-4 py-2 rounded-full bg-white dark:bg-black border-2 border-black dark:border-white`}
+                          className={`inline-flex items-center space-x-2 mt-6 px-4 py-2 rounded-full bg-white dark:bg-primary-charcoal border border-slate-300 dark:border-slate-600`}
                           whileHover={{ scale: 1.05 }}
                         >
                           <TrendingUp className={`w-4 h-4 ${step.accentColor}`} />
@@ -240,7 +240,7 @@ export default function HowItWorks() {
                     {/* Center Circle with Icon */}
                     <div className="absolute left-8 md:left-1/2 transform -translate-x-1/2 z-20">
                       <motion.div
-                        className={`relative w-24 h-24 rounded-3xl ${step.iconBg} shadow-2xl flex items-center justify-center text-black dark:text-black`}
+                        className={`relative w-24 h-24 rounded-3xl ${step.iconBg} shadow-2xl flex items-center justify-center text-primary-charcoal dark:text-primary-charcoal`}
                         initial={{ scale: 0, rotate: -180 }}
                         whileInView={{ scale: 1, rotate: 0 }}
                         viewport={{ once: true }}
@@ -290,7 +290,7 @@ export default function HowItWorks() {
                           ease: 'easeInOut',
                         }}
                       >
-                        <div className={`w-64 h-64 rounded-3xl bg-gradient-to-br ${step.color} p-8 flex items-center justify-center shadow-2xl relative overflow-hidden border-2 border-black dark:border-white`}>
+                        <div className={`w-64 h-64 rounded-3xl bg-gradient-to-br ${step.color} p-8 flex items-center justify-center shadow-2xl relative overflow-hidden border border-slate-300 dark:border-slate-600`}>
                           {/* Animated background pattern */}
                           <motion.div
                             className="absolute inset-0 opacity-10"
@@ -373,7 +373,7 @@ export default function HowItWorks() {
           transition={{ duration: 0.6 }}
         >
           <motion.button
-            className="group relative px-10 py-5 bg-primary-yellow text-black border-2 border-black dark:bg-primary-yellow-light dark:border-white rounded-2xl font-bold text-lg shadow-2xl overflow-hidden"
+            className="group relative px-10 py-5 bg-primary-yellow text-primary-charcoal border border-primary-charcoal dark:bg-transparent dark:border-primary-yellow-light dark:text-primary-yellow-light hover:bg-primary-yellow-dark dark:hover:bg-primary-yellow-light/10 rounded-2xl font-bold text-lg shadow-2xl overflow-hidden transition-all"
             whileHover={{ scale: 1.05, boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)' }}
             whileTap={{ scale: 0.95 }}
           >
