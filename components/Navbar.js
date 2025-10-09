@@ -106,7 +106,7 @@ export default function Navbar() {
                 <motion.a
                   key={item.name}
                   href={item.href}
-                  className="relative text-gray-800 dark:text-gray-200 hover:text-primary-yellow dark:hover:text-primary-yellow-light font-medium cursor-pointer group"
+                  className="relative text-slate-700 dark:text-slate-200 hover:text-primary-yellow dark:hover:text-primary-yellow-light font-medium cursor-pointer group"
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
@@ -165,7 +165,7 @@ export default function Navbar() {
 
               {/* CTA Button (Desktop) */}
               <motion.button
-                className="hidden md:flex items-center space-x-2 px-6 py-2 bg-primary-yellow text-black border-2 border-black rounded-full font-semibold relative overflow-hidden group dark:bg-primary-yellow-light dark:border-white dark:text-black"
+                className="hidden md:flex items-center space-x-2 px-6 py-2 bg-primary-yellow text-primary-charcoal border border-primary-charcoal rounded-full font-semibold relative overflow-hidden group dark:bg-transparent dark:border-primary-yellow-light dark:text-primary-yellow-light hover:bg-primary-yellow-dark dark:hover:bg-primary-yellow-light/10"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -187,7 +187,7 @@ export default function Navbar() {
 
               {/* Mobile Menu Button */}
               <motion.button
-                className="md:hidden p-2 rounded-lg bg-white/10 dark:bg-black/50 backdrop-blur-sm border border-black dark:border-white"
+                className="md:hidden p-2 rounded-lg bg-white/10 dark:bg-primary-charcoal/50 backdrop-blur-sm border border-slate-300 dark:border-slate-600"
                 onClick={() => setMobileMenuOpen(true)}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
@@ -210,8 +210,8 @@ export default function Navbar() {
           body: { 
             padding: 0,
             background: isDarkMode 
-              ? 'linear-gradient(to bottom, #0A0A0A, #1A1A1A)' 
-              : 'linear-gradient(to bottom, #FFFDF5, #FEF9E7)',
+              ? 'linear-gradient(to bottom, #0F172A, #1E293B)' 
+              : 'linear-gradient(to bottom, #F9FAFB, #FFFFFF)',
           },
         }}
       >

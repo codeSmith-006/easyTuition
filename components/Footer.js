@@ -59,7 +59,7 @@ export default function Footer() {
   }
 
   return (
-    <footer id="footer" className="relative bg-[#0A0A0A] text-white overflow-hidden border-t-2 border-primary-yellow dark:border-primary-yellow-light">
+    <footer id="footer" className="relative bg-primary-charcoal-dark text-white overflow-hidden border-t border-primary-yellow dark:border-primary-yellow-light">
       {/* Gradient Background Lines */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-yellow via-primary-yellow-light to-primary-yellow" />
@@ -253,12 +253,12 @@ export default function Footer() {
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 px-6 py-3 rounded-full bg-black border-2 border-white text-white placeholder-gray-500 focus:outline-none focus:border-primary-yellow transition-colors"
+              className="flex-1 px-6 py-3 rounded-full bg-primary-charcoal border border-slate-600 text-white placeholder-slate-400 focus:outline-none focus:border-primary-yellow transition-colors"
             />
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 bg-primary-yellow text-black border-2 border-black dark:bg-primary-yellow-light dark:border-white rounded-full font-semibold hover:shadow-lg transition-shadow"
+              className="px-8 py-3 bg-primary-yellow text-primary-charcoal border border-primary-charcoal hover:bg-primary-yellow-dark dark:bg-transparent dark:border-primary-yellow-light dark:text-primary-yellow-light dark:hover:bg-primary-yellow-light/10 rounded-full font-semibold transition-all"
             >
               Subscribe
             </motion.button>
