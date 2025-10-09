@@ -153,7 +153,7 @@ export default function Hero() {
               variants={slideInLeft}
               className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-gray-900 dark:text-white"
             >
-              <span className="bg-gradient-to-r from-primary-yellow to-primary-yellow-light dark:from-primary-yellow-light dark:to-primary-yellow bg-clip-text text-transparent"
+              <span className="bg-gradient-to-r from-primary-yellow to-primary-yellow-light dark:from-primary-yellow-light dark:to-primary-yellow bg-clip-text text-transparent">
                 {typedText}
                 {showCursor && <span className="typing-cursor">|</span>}
               </span>
