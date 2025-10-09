@@ -30,10 +30,10 @@ export default function HowItWorks() {
         'Real-time availability',
         'Student reviews & ratings',
       ],
-      color: 'from-blue-500 to-cyan-500',
-      accentColor: 'text-blue-500',
-      bgColor: 'bg-blue-50 dark:bg-blue-900/20',
-      iconBg: 'bg-blue-500',
+      color: 'from-primary-yellow to-primary-yellow-light',
+      accentColor: 'text-primary-yellow dark:text-primary-yellow-light',
+      bgColor: 'bg-primary-yellow/10 dark:bg-primary-yellow-light/10',
+      iconBg: 'bg-primary-yellow border-2 border-black dark:border-white',
       stats: { value: '500+', label: 'Teachers' },
     },
     {
@@ -47,10 +47,10 @@ export default function HowItWorks() {
         'Schedule booking',
         'Price negotiation',
       ],
-      color: 'from-purple-500 to-pink-500',
-      accentColor: 'text-purple-500',
-      bgColor: 'bg-purple-50 dark:bg-purple-900/20',
-      iconBg: 'bg-purple-500',
+      color: 'from-primary-yellow to-primary-yellow-light',
+      accentColor: 'text-primary-yellow dark:text-primary-yellow-light',
+      bgColor: 'bg-primary-yellow/10 dark:bg-primary-yellow-light/10',
+      iconBg: 'bg-primary-yellow-light border-2 border-black dark:border-white',
       stats: { value: '24/7', label: 'Support' },
     },
     {
@@ -64,10 +64,10 @@ export default function HowItWorks() {
         'Assignment management',
         'Performance reports',
       ],
-      color: 'from-green-500 to-emerald-500',
-      accentColor: 'text-green-500',
-      bgColor: 'bg-green-50 dark:bg-green-900/20',
-      iconBg: 'bg-green-500',
+      color: 'from-primary-yellow to-primary-yellow-light',
+      accentColor: 'text-primary-yellow dark:text-primary-yellow-light',
+      bgColor: 'bg-primary-yellow/10 dark:bg-primary-yellow-light/10',
+      iconBg: 'bg-primary-yellow border-2 border-black dark:border-white',
       stats: { value: '98%', label: 'Success Rate' },
     },
   ]
@@ -76,12 +76,12 @@ export default function HowItWorks() {
     <section
       id="how-it-works"
       ref={containerRef}
-      className="relative py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-gray-50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-hidden"
+      className="relative py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#FFFDF5] via-[#FEF9E7] to-[#FFFDF5] dark:from-[#0A0A0A] dark:via-[#1A1A1A] dark:to-[#0A0A0A] overflow-hidden"
     >
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
-          className="absolute top-20 left-10 w-72 h-72 bg-blue-200 dark:bg-blue-900 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-20"
+          className="absolute top-20 left-10 w-72 h-72 bg-primary-yellow dark:bg-primary-yellow-light rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-20 dark:opacity-10"
           animate={{
             scale: [1, 1.2, 1],
             x: [0, 50, 0],
@@ -94,7 +94,7 @@ export default function HowItWorks() {
           }}
         />
         <motion.div
-          className="absolute bottom-20 right-10 w-72 h-72 bg-green-200 dark:bg-green-900 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-20"
+          className="absolute bottom-20 right-10 w-72 h-72 bg-primary-yellow-light dark:bg-primary-yellow rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-20 dark:opacity-10"
           animate={{
             scale: [1, 1.3, 1],
             x: [0, -50, 0],
@@ -118,17 +118,17 @@ export default function HowItWorks() {
           transition={{ duration: 0.6 }}
         >
           <motion.div
-            className="inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-blue-500/10 to-green-500/10 rounded-full mb-6"
+            className="inline-flex items-center space-x-2 px-4 py-2 bg-primary-yellow/10 dark:bg-primary-yellow-light/10 border-2 border-black dark:border-white rounded-full mb-6"
             whileHover={{ scale: 1.05 }}
           >
-            <Sparkles className="w-4 h-4 text-blue-500" />
+            <Sparkles className="w-4 h-4 text-primary-yellow dark:text-primary-yellow-light" />
             <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">
               Simple Process
             </span>
           </motion.div>
 
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-green-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary-yellow via-primary-yellow-light to-primary-yellow bg-clip-text text-transparent"
               How It Works
             </span>
           </h2>
@@ -143,7 +143,7 @@ export default function HowItWorks() {
           {/* Vertical Progress Line */}
           <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-1 bg-gray-200 dark:bg-gray-700 transform md:-translate-x-1/2">
             <motion.div
-              className="absolute top-0 left-0 right-0 bg-gradient-to-b from-blue-500 via-purple-500 to-green-500 origin-top"
+              className="absolute top-0 left-0 right-0 bg-gradient-to-b from-primary-yellow via-primary-yellow-light to-primary-yellow origin-top"
               style={{ scaleY: smoothProgress }}
             />
           </div>
@@ -170,7 +170,7 @@ export default function HowItWorks() {
                       whileHover={{ scale: 1.02 }}
                       transition={{ type: 'spring', stiffness: 300 }}
                     >
-                      <div className={`relative p-8 rounded-3xl backdrop-blur-xl border-2 ${step.bgColor} border-gray-200 dark:border-gray-700 shadow-xl hover:shadow-2xl transition-all duration-300`}>
+                      <div className={`relative p-8 rounded-3xl backdrop-blur-xl border-2 ${step.bgColor} border-black dark:border-white shadow-xl hover:shadow-2xl transition-all duration-300`}>
                         {/* Decorative corner */}
                         <motion.div
                           className={`absolute top-4 ${isEven ? 'right-4' : 'left-4'} w-12 h-12 bg-gradient-to-br ${step.color} rounded-2xl opacity-20`}
@@ -223,7 +223,7 @@ export default function HowItWorks() {
 
                         {/* Stats Badge */}
                         <motion.div
-                          className={`inline-flex items-center space-x-2 mt-6 px-4 py-2 rounded-full bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700`}
+                          className={`inline-flex items-center space-x-2 mt-6 px-4 py-2 rounded-full bg-white dark:bg-black border-2 border-black dark:border-white`}
                           whileHover={{ scale: 1.05 }}
                         >
                           <TrendingUp className={`w-4 h-4 ${step.accentColor}`} />
@@ -240,7 +240,7 @@ export default function HowItWorks() {
                     {/* Center Circle with Icon */}
                     <div className="absolute left-8 md:left-1/2 transform -translate-x-1/2 z-20">
                       <motion.div
-                        className={`relative w-24 h-24 rounded-3xl ${step.iconBg} shadow-2xl flex items-center justify-center`}
+                        className={`relative w-24 h-24 rounded-3xl ${step.iconBg} shadow-2xl flex items-center justify-center text-black dark:text-black`}
                         initial={{ scale: 0, rotate: -180 }}
                         whileInView={{ scale: 1, rotate: 0 }}
                         viewport={{ once: true }}
@@ -290,7 +290,7 @@ export default function HowItWorks() {
                           ease: 'easeInOut',
                         }}
                       >
-                        <div className={`w-64 h-64 rounded-3xl bg-gradient-to-br ${step.color} p-8 flex items-center justify-center shadow-2xl relative overflow-hidden`}>
+                        <div className={`w-64 h-64 rounded-3xl bg-gradient-to-br ${step.color} p-8 flex items-center justify-center shadow-2xl relative overflow-hidden border-2 border-black dark:border-white`}>
                           {/* Animated background pattern */}
                           <motion.div
                             className="absolute inset-0 opacity-10"
@@ -373,7 +373,7 @@ export default function HowItWorks() {
           transition={{ duration: 0.6 }}
         >
           <motion.button
-            className="group relative px-10 py-5 bg-gradient-to-r from-blue-600 via-purple-600 to-green-600 text-white rounded-2xl font-bold text-lg shadow-2xl overflow-hidden"
+            className="group relative px-10 py-5 bg-primary-yellow text-black border-2 border-black dark:bg-primary-yellow-light dark:border-white rounded-2xl font-bold text-lg shadow-2xl overflow-hidden"
             whileHover={{ scale: 1.05, boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)' }}
             whileTap={{ scale: 0.95 }}
           >
