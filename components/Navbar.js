@@ -1,63 +1,63 @@
-'use client'
+"use client";
 
-import { useState, useEffect } from 'react'
-import { motion, useScroll, AnimatePresence } from 'framer-motion'
-import { Switch, Drawer, Button } from 'antd'
-import { Sun, Moon, GraduationCap, Menu, X, Sparkles } from 'lucide-react'
-import { useTheme } from '@/contexts/ThemeContext'
+import { useState, useEffect } from "react";
+import { motion, useScroll, AnimatePresence } from "framer-motion";
+import { Switch, Drawer, Button } from "antd";
+import { Sun, Moon, GraduationCap, Menu, X, Sparkles } from "lucide-react";
+import { useTheme } from "@/contexts/ThemeContext";
 
 export default function Navbar() {
-  const { isDarkMode, toggleTheme } = useTheme()
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [showScrollFlash, setShowScrollFlash] = useState(false)
-  const [lastScrollY, setLastScrollY] = useState(0)
-  const { scrollY } = useScroll()
+  const { isDarkMode, toggleTheme } = useTheme();
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showScrollFlash, setShowScrollFlash] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const { scrollY } = useScroll();
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY
-      setIsScrolled(currentScrollY > 20)
+      const currentScrollY = window.scrollY;
+      setIsScrolled(currentScrollY > 20);
 
       // Scroll flash effect - trigger when scrolling down
       if (currentScrollY > lastScrollY && currentScrollY > 50) {
-        setShowScrollFlash(true)
-        setTimeout(() => setShowScrollFlash(false), 300)
+        setShowScrollFlash(true);
+        setTimeout(() => setShowScrollFlash(false), 300);
       }
-      
-      setLastScrollY(currentScrollY)
-    }
 
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [lastScrollY])
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'Find Teacher', href: '#features' },
-    { name: 'Join as Teacher', href: '#cta' },
-    { name: 'About', href: '#how-it-works' },
-    { name: 'Contact', href: '#footer' },
-  ]
+    { name: "Home", href: "#home" },
+    { name: "Find Teacher", href: "#features" },
+    { name: "Join as Teacher", href: "#cta" },
+    { name: "About", href: "#how-it-works" },
+    { name: "Contact", href: "#footer" },
+  ];
 
   const handleNavClick = (href) => {
-    setMobileMenuOpen(false)
+    setMobileMenuOpen(false);
     // Smooth scroll to section
-    const element = document.querySelector(href)
+    const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
+      element.scrollIntoView({ behavior: "smooth" });
     }
-  }
+  };
 
   return (
     <>
       <motion.nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled ? 'glass-effect shadow-lg' : 'bg-transparent'
+          isScrolled ? "glass-effect shadow-lg" : "bg-transparent"
         }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        transition={{ type: 'spring', stiffness: 100, damping: 20 }}
+        transition={{ type: "spring", stiffness: 100, damping: 20 }}
       >
         {/* Scroll Flash Border Effect */}
         <AnimatePresence>
@@ -67,9 +67,9 @@ export default function Navbar() {
               initial={{ opacity: 0, scaleX: 0.5 }}
               animate={{ opacity: 1, scaleX: 1 }}
               exit={{ opacity: 0, scaleX: 0.5 }}
-              transition={{ duration: 0.3, ease: 'easeOut' }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
               style={{
-                boxShadow: '0 0 20px rgba(255, 255, 255, 0.8)',
+                boxShadow: "0 0 20px rgba(255, 255, 255, 0.8)",
               }}
             />
           )}
@@ -81,17 +81,17 @@ export default function Navbar() {
             <motion.div
               className="flex items-center space-x-2 cursor-pointer"
               whileHover={{ scale: 1.05 }}
-              whileTap={{ 
+              whileTap={{
                 scale: 0.95,
-                rotate: [0, -10, 10, -10, 0]
+                rotate: [0, -10, 10, -10, 0],
               }}
-              transition={{ 
-                rotate: { duration: 0.5, type: 'spring', stiffness: 300 }
+              transition={{
+                rotate: { duration: 0.5, type: "spring", stiffness: 300 },
               }}
             >
               <motion.div
                 whileHover={{ rotate: 360 }}
-                transition={{ duration: 0.6, ease: 'easeInOut' }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
               >
                 <GraduationCap className="w-8 h-8 text-primary-yellow dark:text-primary-teal" />
               </motion.div>
@@ -116,7 +116,7 @@ export default function Navbar() {
                   <motion.span
                     className="absolute -bottom-1 left-0 h-0.5 bg-gradient-yellow-teal"
                     initial={{ width: 0 }}
-                    whileHover={{ width: '100%' }}
+                    whileHover={{ width: "100%" }}
                     transition={{ duration: 0.3 }}
                   />
                   <motion.span
@@ -139,11 +139,11 @@ export default function Navbar() {
                 transition={{ delay: 0.5 }}
               >
                 <motion.div
-                  animate={{ 
+                  animate={{
                     rotate: isDarkMode ? 180 : 0,
-                    scale: isDarkMode ? 0.8 : 1
+                    scale: isDarkMode ? 0.8 : 1,
                   }}
-                  transition={{ duration: 0.3, type: 'spring' }}
+                  transition={{ duration: 0.3, type: "spring" }}
                 >
                   <Sun className="w-4 h-4 text-yellow-500" />
                 </motion.div>
@@ -153,11 +153,11 @@ export default function Navbar() {
                   className="bg-gray-300"
                 />
                 <motion.div
-                  animate={{ 
+                  animate={{
                     rotate: isDarkMode ? 0 : -180,
-                    scale: isDarkMode ? 1 : 0.8
+                    scale: isDarkMode ? 1 : 0.8,
                   }}
-                  transition={{ duration: 0.3, type: 'spring' }}
+                  transition={{ duration: 0.3, type: "spring" }}
                 >
                   <Moon className="w-4 h-4 text-blue-500" />
                 </motion.div>
@@ -171,7 +171,7 @@ export default function Navbar() {
               >
                 <span className="relative z-10">Get Started</span>
                 <Sparkles className="w-4 h-4 relative z-10" />
-                
+
                 {/* Glow Effect on Hover */}
                 <motion.div
                   className="absolute inset-0 bg-primary-teal opacity-0 group-hover:opacity-100 blur-xl shadow-[0_0_20px_rgba(13,148,136,0.5)]"
@@ -207,11 +207,11 @@ export default function Navbar() {
         closable={false}
         width={280}
         styles={{
-          body: { 
+          body: {
             padding: 0,
-            background: isDarkMode 
-              ? 'linear-gradient(to bottom, #0F172A, #1E293B)' 
-              : 'linear-gradient(to bottom, #F9FAFB, #FFFFFF)',
+            background: isDarkMode
+              ? "linear-gradient(to bottom, #0F172A, #1E293B)"
+              : "linear-gradient(to bottom, #F9FAFB, #FFFFFF)",
           },
         }}
       >
@@ -220,7 +220,7 @@ export default function Navbar() {
           initial={{ x: -280 }}
           animate={{ x: 0 }}
           exit={{ x: -280 }}
-          transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+          transition={{ type: "spring", stiffness: 300, damping: 30 }}
         >
           {/* Drawer Header */}
           <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
@@ -254,7 +254,7 @@ export default function Navbar() {
                 whileHover={{ x: 10 }}
               >
                 {item.name}
-                
+
                 {/* Hover Glow Effect */}
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-r from-primary-yellow/20 to-primary-teal/20 opacity-0 group-hover:opacity-100 -z-10 rounded-lg"
@@ -279,11 +279,11 @@ export default function Navbar() {
               </span>
               <div className="flex items-center space-x-2">
                 <motion.div
-                  animate={{ 
+                  animate={{
                     rotate: isDarkMode ? 180 : 0,
-                    scale: isDarkMode ? 0.8 : 1
+                    scale: isDarkMode ? 0.8 : 1,
                   }}
-                  transition={{ duration: 0.3, type: 'spring' }}
+                  transition={{ duration: 0.3, type: "spring" }}
                 >
                   <Sun className="w-4 h-4 text-yellow-500" />
                 </motion.div>
@@ -293,11 +293,11 @@ export default function Navbar() {
                   size="small"
                 />
                 <motion.div
-                  animate={{ 
+                  animate={{
                     rotate: isDarkMode ? 0 : -180,
-                    scale: isDarkMode ? 1 : 0.8
+                    scale: isDarkMode ? 1 : 0.8,
                   }}
-                  transition={{ duration: 0.3, type: 'spring' }}
+                  transition={{ duration: 0.3, type: "spring" }}
                 >
                   <Moon className="w-4 h-4 text-blue-500" />
                 </motion.div>
@@ -309,11 +309,11 @@ export default function Navbar() {
               className="w-full flex items-center justify-center space-x-2 px-6 py-3 bg-primary-yellow text-primary-black border border-primary-teal rounded-full font-semibold relative overflow-hidden group hover:bg-primary-teal hover:text-primary-yellow dark:bg-primary-teal dark:text-primary-yellow dark:hover:bg-primary-yellow dark:hover:text-primary-black transition-all duration-300"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              onClick={() => handleNavClick('#cta')}
+              onClick={() => handleNavClick("#cta")}
             >
               <span className="relative z-10">Get Started</span>
               <Sparkles className="w-4 h-4 relative z-10" />
-              
+
               {/* Glow Effect */}
               <motion.div
                 className="absolute inset-0 bg-primary-teal/20 opacity-0 group-hover:opacity-100"
@@ -326,5 +326,5 @@ export default function Navbar() {
         </motion.div>
       </Drawer>
     </>
-  )
+  );
 }
