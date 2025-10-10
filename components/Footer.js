@@ -33,10 +33,10 @@ export default function Footer() {
   }
 
   const socialLinks = [
-    { icon: Facebook, href: '#', color: 'hover:text-primary-yellow-light' },
-    { icon: Linkedin, href: '#', color: 'hover:text-primary-yellow-light' },
-    { icon: MessageCircle, href: '#', color: 'hover:text-primary-yellow-light' },
-    { icon: Twitter, href: '#', color: 'hover:text-primary-yellow-light' },
+    { icon: Facebook, href: '#', color: 'hover:text-primary-teal' },
+    { icon: Linkedin, href: '#', color: 'hover:text-primary-teal' },
+    { icon: MessageCircle, href: '#', color: 'hover:text-primary-teal' },
+    { icon: Twitter, href: '#', color: 'hover:text-primary-teal' },
   ]
 
   const containerVariants = {
