@@ -7,7 +7,7 @@ export default function CTABanner() {
   return (
     <section id="cta" className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-teal-dark" />
+      <div className="absolute inset-0 bg-gradient-yellow opacity-90" />
       
       {/* Animated Background Pattern */}
       <div className="absolute inset-0 opacity-20">
@@ -35,14 +35,14 @@ export default function CTABanner() {
 
       {/* Floating Elements */}
       <motion.div
-        className="absolute top-10 left-10 text-primary-yellow opacity-30"
+        className="absolute top-10 left-10 text-primary-charcoal dark:text-slate-200 opacity-30"
         animate={{ rotate: 360 }}
         transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
       >
         <Sparkles size={64} />
       </motion.div>
       <motion.div
-        className="absolute bottom-10 right-10 text-primary-teal opacity-30"
+        className="absolute bottom-10 right-10 text-primary-charcoal dark:text-slate-200 opacity-30"
         animate={{ rotate: -360 }}
         transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
       >
@@ -139,7 +139,7 @@ export default function CTABanner() {
             </motion.button>
 
             <motion.button
-              className="px-12 py-5 bg-transparent border border-white text-white rounded-full font-bold text-lg hover:bg-primary-teal hover:border-primary-teal transition-all duration-300"
+              className="px-12 py-5 bg-transparent border border-slate-400 dark:border-slate-500 text-slate-700 dark:text-slate-200 rounded-full font-bold text-lg hover:bg-primary-yellow hover:text-primary-charcoal hover:border-primary-yellow dark:hover:bg-primary-yellow-light/10 dark:hover:border-primary-yellow-light transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -149,7 +149,7 @@ export default function CTABanner() {
 
           {/* Trust Indicators */}
           <motion.div
-            className="mt-12 flex flex-wrap justify-center items-center gap-8 text-white/80 text-sm"
+            className="mt-12 flex flex-wrap justify-center items-center gap-8 text-slate-600 dark:text-slate-400 text-sm"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}

@@ -39,11 +39,12 @@ export default function HowItWorks() {
         "Real-time availability",
         "Student reviews & ratings",
       ],
-      color: 'from-primary-yellow to-primary-teal',
-      accentColor: 'text-primary-yellow dark:text-primary-teal',
-      bgColor: 'bg-primary-yellow/10 dark:bg-primary-teal/10',
-      iconBg: 'bg-primary-yellow border border-primary-teal',
-      stats: { value: '500+', label: 'Teachers' },
+      color: "from-primary-yellow to-primary-yellow-light",
+      accentColor: "text-primary-yellow dark:text-primary-yellow-light",
+      bgColor: "bg-primary-yellow/10 dark:bg-primary-yellow-light/10",
+      iconBg:
+        "bg-primary-yellow border border-primary-charcoal dark:border-slate-600",
+      stats: { value: "500+", label: "Teachers" },
     },
     {
       icon: MessageCircle,
@@ -57,11 +58,12 @@ export default function HowItWorks() {
         "Schedule booking",
         "Price negotiation",
       ],
-      color: 'from-primary-teal to-primary-yellow',
-      accentColor: 'text-primary-teal dark:text-primary-yellow',
-      bgColor: 'bg-primary-teal/10 dark:bg-primary-yellow/10',
-      iconBg: 'bg-primary-teal border border-primary-yellow',
-      stats: { value: '24/7', label: 'Support' },
+      color: "from-primary-yellow to-primary-yellow-light",
+      accentColor: "text-primary-yellow dark:text-primary-yellow-light",
+      bgColor: "bg-primary-yellow/10 dark:bg-primary-yellow-light/10",
+      iconBg:
+        "bg-primary-yellow-light border border-primary-charcoal dark:border-slate-600",
+      stats: { value: "24/7", label: "Support" },
     },
     {
       icon: BookOpen,
@@ -87,12 +89,12 @@ export default function HowItWorks() {
     <section
       id="how-it-works"
       ref={containerRef}
-      className="relative py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-primary-soft-white via-white to-primary-soft-white dark:from-primary-black dark:via-gray-900 dark:to-primary-black overflow-hidden"
+      className="relative py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-primary-gray-light via-white to-primary-gray-light dark:from-primary-charcoal-dark dark:via-primary-charcoal dark:to-primary-charcoal-dark overflow-hidden"
     >
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
-          className="absolute top-20 left-10 w-72 h-72 bg-primary-yellow rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-20 dark:opacity-10"
+          className="absolute top-20 left-10 w-72 h-72 bg-primary-yellow dark:bg-primary-yellow-light rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-20 dark:opacity-10"
           animate={{
             scale: [1, 1.2, 1],
             x: [0, 50, 0],
@@ -105,7 +107,7 @@ export default function HowItWorks() {
           }}
         />
         <motion.div
-          className="absolute bottom-20 right-10 w-72 h-72 bg-primary-teal rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-20 dark:opacity-10"
+          className="absolute bottom-20 right-10 w-72 h-72 bg-primary-yellow-light dark:bg-primary-yellow rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-20 dark:opacity-10"
           animate={{
             scale: [1, 1.3, 1],
             x: [0, -50, 0],
@@ -129,7 +131,7 @@ export default function HowItWorks() {
           transition={{ duration: 0.6 }}
         >
           <motion.div
-            className="inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-primary-yellow/10 to-primary-teal/10 border border-primary-teal rounded-full mb-6"
+            className="inline-flex items-center space-x-2 px-4 py-2 bg-primary-yellow/10 dark:bg-primary-yellow-light/10 border border-slate-300 dark:border-slate-600 rounded-full mb-6"
             whileHover={{ scale: 1.05 }}
           >
             <Sparkles className="w-4 h-4 text-primary-yellow dark:text-primary-yellow-light" />
@@ -155,7 +157,7 @@ export default function HowItWorks() {
           {/* Vertical Progress Line */}
           <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-1 bg-gray-200 dark:bg-gray-700 transform md:-translate-x-1/2">
             <motion.div
-              className="absolute top-0 left-0 right-0 bg-gradient-yellow-teal origin-top"
+              className="absolute top-0 left-0 right-0 bg-gradient-to-b from-primary-yellow via-primary-yellow-light to-primary-yellow origin-top"
               style={{ scaleY: smoothProgress }}
             />
           </div>
@@ -190,7 +192,9 @@ export default function HowItWorks() {
                       whileHover={{ scale: 1.02 }}
                       transition={{ type: "spring", stiffness: 300 }}
                     >
-                      <div className={`relative p-8 rounded-3xl backdrop-blur-xl border ${step.bgColor} border-gray-300 dark:border-gray-700 hover:border-primary-teal hover:shadow-[0_0_20px_rgba(13,148,136,0.5)] transition-all duration-300`}>
+                      <div
+                        className={`relative p-8 rounded-3xl backdrop-blur-xl border ${step.bgColor} border-slate-300 dark:border-slate-600 hover:border-primary-yellow dark:hover:border-primary-yellow-light shadow-xl hover:shadow-2xl transition-all duration-300`}
+                      >
                         {/* Decorative corner */}
                         <motion.div
                           className={`absolute top-4 ${
@@ -255,7 +259,7 @@ export default function HowItWorks() {
 
                         {/* Stats Badge */}
                         <motion.div
-                          className={`inline-flex items-center space-x-2 mt-6 px-4 py-2 rounded-full bg-white dark:bg-primary-black border border-primary-teal/50`}
+                          className={`inline-flex items-center space-x-2 mt-6 px-4 py-2 rounded-full bg-white dark:bg-primary-charcoal border border-slate-300 dark:border-slate-600`}
                           whileHover={{ scale: 1.05 }}
                         >
                           <TrendingUp
@@ -274,7 +278,7 @@ export default function HowItWorks() {
                     {/* Center Circle with Icon */}
                     <div className="absolute left-8 md:left-1/2 transform -translate-x-1/2 z-20">
                       <motion.div
-                        className={`relative w-24 h-24 rounded-3xl ${step.iconBg} shadow-2xl flex items-center justify-center text-primary-black`}
+                        className={`relative w-24 h-24 rounded-3xl ${step.iconBg} shadow-2xl flex items-center justify-center text-primary-charcoal dark:text-primary-charcoal`}
                         initial={{ scale: 0, rotate: -180 }}
                         whileInView={{ scale: 1, rotate: 0 }}
                         viewport={{ once: true }}
@@ -327,7 +331,9 @@ export default function HowItWorks() {
                           ease: "easeInOut",
                         }}
                       >
-                        <div className={`w-64 h-64 rounded-3xl bg-gradient-to-br ${step.color} p-8 flex items-center justify-center shadow-2xl relative overflow-hidden border border-primary-teal/30`}>
+                        <div
+                          className={`w-64 h-64 rounded-3xl bg-gradient-to-br ${step.color} p-8 flex items-center justify-center shadow-2xl relative overflow-hidden border border-slate-300 dark:border-slate-600`}
+                        >
                           {/* Animated background pattern */}
                           <motion.div
                             className="absolute inset-0 opacity-10"
@@ -411,8 +417,11 @@ export default function HowItWorks() {
           transition={{ duration: 0.6 }}
         >
           <motion.button
-            className="group relative px-10 py-5 bg-primary-yellow text-primary-black border border-primary-teal hover:bg-primary-teal hover:text-primary-yellow dark:bg-primary-teal dark:text-primary-yellow dark:hover:bg-primary-yellow dark:hover:text-primary-black rounded-2xl font-bold text-lg shadow-2xl overflow-hidden transition-all duration-300"
-            whileHover={{ scale: 1.05, boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)' }}
+            className="group relative px-10 py-5 bg-primary-yellow text-primary-charcoal border border-primary-charcoal dark:bg-transparent dark:border-primary-yellow-light dark:text-primary-yellow-light hover:bg-primary-yellow-dark dark:hover:bg-primary-yellow-light/10 rounded-2xl font-bold text-lg shadow-2xl overflow-hidden transition-all"
+            whileHover={{
+              scale: 1.05,
+              boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+            }}
             whileTap={{ scale: 0.95 }}
           >
             <span className="relative z-10 flex items-center space-x-3">
@@ -446,7 +455,4 @@ export default function HowItWorks() {
       </div>
     </section>
   );
-}
-/section>
-  )
 }

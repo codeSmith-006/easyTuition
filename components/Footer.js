@@ -33,10 +33,10 @@ export default function Footer() {
   }
 
   const socialLinks = [
-    { icon: Facebook, href: '#', color: 'hover:text-primary-teal' },
-    { icon: Linkedin, href: '#', color: 'hover:text-primary-teal' },
-    { icon: MessageCircle, href: '#', color: 'hover:text-primary-teal' },
-    { icon: Twitter, href: '#', color: 'hover:text-primary-teal' },
+    { icon: Facebook, href: '#', color: 'hover:text-primary-yellow-light' },
+    { icon: Linkedin, href: '#', color: 'hover:text-primary-yellow-light' },
+    { icon: MessageCircle, href: '#', color: 'hover:text-primary-yellow-light' },
+    { icon: Twitter, href: '#', color: 'hover:text-primary-yellow-light' },
   ]
 
   const containerVariants = {
@@ -59,14 +59,14 @@ export default function Footer() {
   }
 
   return (
-    <footer id="footer" className="relative bg-primary-black text-white overflow-hidden border-t border-primary-teal">
+    <footer id="footer" className="relative bg-primary-charcoal-dark text-white overflow-hidden border-t border-primary-yellow dark:border-primary-yellow-light">
       {/* Gradient Background Lines */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-yellow-teal" />
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-yellow via-primary-yellow-light to-primary-yellow" />
         <motion.div
           className="absolute inset-0 opacity-10"
           style={{
-            backgroundImage: 'linear-gradient(to bottom, transparent 95%, rgba(13, 148, 136, 0.3) 95%)',
+            backgroundImage: 'linear-gradient(to bottom, transparent 95%, rgba(250, 204, 21, 0.3) 95%)',
             backgroundSize: '100% 50px',
           }}
         />
@@ -253,12 +253,12 @@ export default function Footer() {
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 px-6 py-3 rounded-full bg-primary-black border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:border-primary-teal focus:shadow-[0_0_15px_rgba(13,148,136,0.3)] transition-all"
+              className="flex-1 px-6 py-3 rounded-full bg-primary-charcoal border border-slate-600 text-white placeholder-slate-400 focus:outline-none focus:border-primary-yellow transition-colors"
             />
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 bg-primary-yellow text-primary-black border border-primary-teal hover:bg-primary-teal hover:text-primary-yellow dark:bg-primary-teal dark:text-primary-yellow dark:hover:bg-primary-yellow dark:hover:text-primary-black rounded-full font-semibold transition-all duration-300"
+              className="px-8 py-3 bg-primary-yellow text-primary-charcoal border border-primary-charcoal hover:bg-primary-yellow-dark dark:bg-transparent dark:border-primary-yellow-light dark:text-primary-yellow-light dark:hover:bg-primary-yellow-light/10 rounded-full font-semibold transition-all"
             >
               Subscribe
             </motion.button>

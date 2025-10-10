@@ -11,19 +11,17 @@ module.exports = {
       colors: {
         primary: {
           yellow: '#FACC15',
+          'yellow-light': '#FDE047',
           'yellow-dark': '#EAB308',
-          teal: '#0D9488',
-          'teal-light': '#14B8A6',
-          'teal-dark': '#0F766E',
-          black: '#111111',
-          'soft-white': '#F5F5F5',
+          charcoal: '#1E293B',
+          'charcoal-dark': '#0F172A',
+          'gray-light': '#F9FAFB',
         },
       },
       backgroundImage: {
-        'gradient-light': 'linear-gradient(135deg, #F5F5F5 0%, #FFFFFF 100%)',
-        'gradient-dark': 'linear-gradient(135deg, #111111 0%, #1a1a1a 100%)',
-        'gradient-teal-dark': 'linear-gradient(135deg, #111111 0%, #0D9488 100%)',
-        'gradient-yellow-teal': 'linear-gradient(to right, #FACC15, #0D9488)',
+        'gradient-light': 'linear-gradient(135deg, #F9FAFB 0%, rgba(253, 224, 71, 0.12) 100%)',
+        'gradient-dark': 'linear-gradient(to bottom right, #0F172A, #1E293B)',
+        'gradient-yellow': 'linear-gradient(to right, #FACC15, #FDE047)',
       },
       animation: {
         'pulse-glow': 'pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
