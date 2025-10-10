@@ -4,11 +4,12 @@
 
 :root {
   --primary-yellow: #FACC15;
-  --primary-yellow-light: #FDE047;
   --primary-yellow-dark: #EAB308;
-  --primary-charcoal: #1E293B;
-  --primary-charcoal-dark: #0F172A;
-  --primary-gray-light: #F9FAFB;
+  --primary-teal: #0D9488;
+  --primary-teal-light: #14B8A6;
+  --primary-teal-dark: #0F766E;
+  --primary-black: #111111;
+  --soft-white: #F5F5F5;
 }
 
 * {
@@ -40,7 +41,7 @@ body {
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(90deg, #FACC15, #FDE047);
+  background: linear-gradient(90deg, #FACC15, #0D9488);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -68,7 +69,7 @@ body {
   height: 2px;
   bottom: -4px;
   left: 0;
-  background: linear-gradient(90deg, #FACC15, #FDE047);
+  background: linear-gradient(90deg, #FACC15, #0D9488);
   transition: width 0.3s ease;
 }
 
