@@ -148,7 +148,7 @@ export default function HowItWorks() {
 
           <p className="text-xl text-primary-text-secondary dark:text-primary-text-secondary-dark max-w-3xl mx-auto">
             Get started in three simple steps. From finding the perfect tutor to
-            achieving your goals, we've made the process seamless and efficient.
+            achieving your goals, we&apos;ve made the process seamless and efficient.
           </p>
         </motion.div>
 
