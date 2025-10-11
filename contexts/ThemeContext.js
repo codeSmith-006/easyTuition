@@ -22,6 +22,9 @@ export function ThemeProvider({ children }) {
     const newTheme = !isDarkMode
     setIsDarkMode(newTheme)
     
+    // Add smooth transition
+    document.documentElement.style.transition = 'background-color 0.3s ease, color 0.3s ease'
+    
     if (newTheme) {
       document.documentElement.classList.add('dark')
       localStorage.setItem('theme', 'dark')
@@ -29,6 +32,11 @@ export function ThemeProvider({ children }) {
       document.documentElement.classList.remove('dark')
       localStorage.setItem('theme', 'light')
     }
+    
+    // Remove transition after completion
+    setTimeout(() => {
+      document.documentElement.style.transition = ''
+    }, 300)
   }
 
   // Prevent hydration mismatch by not rendering until mounted

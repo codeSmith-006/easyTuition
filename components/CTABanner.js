@@ -7,14 +7,14 @@ export default function CTABanner() {
   return (
     <section id="cta" className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-yellow opacity-90" />
+      <div className="absolute inset-0 bg-gradient-mono opacity-90 dark:bg-gradient-dark" />
       
       {/* Animated Background Pattern */}
       <div className="absolute inset-0 opacity-20">
         {[...Array(50)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-2 h-2 bg-white rounded-full"
+            className="absolute w-2 h-2 bg-primary-white dark:bg-primary-black rounded-full"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -35,14 +35,14 @@ export default function CTABanner() {
 
       {/* Floating Elements */}
       <motion.div
-        className="absolute top-10 left-10 text-primary-charcoal dark:text-slate-200 opacity-30"
+        className="absolute top-10 left-10 text-primary-black dark:text-primary-white opacity-20"
         animate={{ rotate: 360 }}
         transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
       >
         <Sparkles size={64} />
       </motion.div>
       <motion.div
-        className="absolute bottom-10 right-10 text-primary-charcoal dark:text-slate-200 opacity-30"
+        className="absolute bottom-10 right-10 text-primary-black dark:text-primary-white opacity-20"
         animate={{ rotate: -360 }}
         transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
       >
@@ -65,14 +65,14 @@ export default function CTABanner() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, type: 'spring' }}
           >
-            <span className="px-6 py-2 bg-primary-charcoal/20 backdrop-blur-sm rounded-full text-primary-charcoal dark:text-slate-100 font-semibold text-sm border border-slate-400 dark:border-slate-500">
+            <span className="px-6 py-2 bg-primary-white/80 dark:bg-primary-black/80 backdrop-blur-sm rounded-full text-primary-black dark:text-primary-white font-semibold text-sm border-2 border-primary-black dark:border-primary-white">
               ✨ Join 50,000+ Students & Teachers
             </span>
           </motion.div>
 
           {/* Main Heading */}
           <motion.h2
-            className="text-4xl md:text-6xl font-bold text-primary-charcoal dark:text-slate-100 mb-6"
+            className="text-4xl md:text-6xl font-bold text-primary-black dark:text-primary-white mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -83,7 +83,7 @@ export default function CTABanner() {
 
           {/* Subtext */}
           <motion.p
-            className="text-xl md:text-2xl text-slate-700 dark:text-slate-300 mb-12 max-w-3xl mx-auto"
+            className="text-xl md:text-2xl text-primary-text dark:text-primary-text-dark mb-12 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -101,13 +101,13 @@ export default function CTABanner() {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <motion.button
-              className="group relative px-12 py-5 bg-primary-yellow text-primary-charcoal border border-primary-charcoal dark:bg-transparent dark:text-primary-yellow-light dark:border-primary-yellow-light hover:bg-primary-yellow-dark dark:hover:bg-primary-yellow-light/10 rounded-full font-bold text-lg shadow-2xl overflow-hidden transition-all"
+              className="group relative px-12 py-5 bg-primary-white text-primary-black border-2 border-primary-black dark:bg-primary-black dark:text-primary-white dark:border-primary-white hover:opacity-90 rounded-full font-bold text-lg shadow-2xl overflow-hidden transition-all"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               {/* Pulse Ring Effect */}
               <motion.div
-                className="absolute inset-0 rounded-full bg-primary-yellow-dark dark:bg-primary-yellow-light/20"
+                className="absolute inset-0 rounded-full bg-gray-200 dark:bg-gray-800"
                 animate={{
                   scale: [1, 1.2, 1.4],
                   opacity: [0.5, 0.3, 0],
@@ -129,17 +129,17 @@ export default function CTABanner() {
                 </motion.div>
               </span>
 
-              {/* Neon Glow on Hover */}
+              {/* Matte Glow on Hover */}
               <motion.div
                 className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 style={{
-                  boxShadow: '0 0 30px rgba(255, 255, 255, 0.8), 0 0 60px rgba(255, 255, 255, 0.5)',
+                  boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
                 }}
               />
             </motion.button>
 
             <motion.button
-              className="px-12 py-5 bg-transparent border border-slate-400 dark:border-slate-500 text-slate-700 dark:text-slate-200 rounded-full font-bold text-lg hover:bg-primary-yellow hover:text-primary-charcoal hover:border-primary-yellow dark:hover:bg-primary-yellow-light/10 dark:hover:border-primary-yellow-light transition-all duration-300"
+              className="px-12 py-5 bg-transparent border-2 border-primary-black dark:border-primary-white text-primary-black dark:text-primary-white rounded-full font-bold text-lg hover:bg-primary-black hover:text-primary-white dark:hover:bg-primary-white dark:hover:text-primary-black transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -149,7 +149,7 @@ export default function CTABanner() {
 
           {/* Trust Indicators */}
           <motion.div
-            className="mt-12 flex flex-wrap justify-center items-center gap-8 text-slate-600 dark:text-slate-400 text-sm"
+            className="mt-12 flex flex-wrap justify-center items-center gap-8 text-primary-text-secondary dark:text-primary-text-secondary-dark text-sm"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}

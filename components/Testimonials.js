@@ -74,7 +74,7 @@ export default function Testimonials() {
               delay: Math.random() * 2,
             }}
           >
-            <Star size={16} className="text-yellow-400" fill="currentColor" />
+            <Star size={16} className="text-primary-black dark:text-primary-white" fill="currentColor" />
           </motion.div>
         ))}
       </div>
@@ -91,7 +91,7 @@ export default function Testimonials() {
           <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">
             Success Stories
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-primary-text-secondary dark:text-primary-text-secondary-dark max-w-2xl mx-auto">
             Hear from our community of students, parents, and teachers
           </p>
         </motion.div>
@@ -120,7 +120,7 @@ export default function Testimonials() {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <div className="bg-white dark:bg-primary-charcoal rounded-3xl shadow-2xl p-8 md:p-12 backdrop-blur-sm border border-slate-300 dark:border-slate-600 relative overflow-hidden">
+                  <div className="bg-primary-card dark:bg-primary-card-dark rounded-3xl shadow-2xl p-8 md:p-12 backdrop-blur-sm border border-primary-border dark:border-primary-border-dark relative overflow-hidden">
                     {/* Quote Icon */}
                     <motion.div
                       className="absolute top-4 right-4 text-primary-yellow dark:text-primary-yellow-light opacity-50"
@@ -142,10 +142,10 @@ export default function Testimonials() {
                           {testimonial.avatar}
                         </motion.div>
                         <div>
-                          <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-1">
+                          <h3 className="text-2xl font-bold text-primary-text dark:text-primary-text-dark mb-1">
                             {testimonial.name}
                           </h3>
-                          <p className="text-gray-600 dark:text-gray-400 mb-2">
+                          <p className="text-primary-text-secondary dark:text-primary-text-secondary-dark mb-2">
                             {testimonial.role}
                           </p>
                           <div className="flex items-center space-x-2">
@@ -154,7 +154,7 @@ export default function Testimonials() {
                               defaultValue={testimonial.rating}
                               className="text-sm"
                             />
-                            <span className="text-sm font-semibold text-primary-yellow dark:text-primary-yellow-light">
+                            <span className="text-sm font-semibold text-primary-black dark:text-primary-white">
                               {testimonial.subject}
                             </span>
                           </div>
