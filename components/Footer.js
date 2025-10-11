@@ -33,10 +33,10 @@ export default function Footer() {
   }
 
   const socialLinks = [
-    { icon: Facebook, href: '#', color: 'hover:text-primary-white dark:hover:text-primary-black' },
-    { icon: Linkedin, href: '#', color: 'hover:text-primary-white dark:hover:text-primary-black' },
-    { icon: MessageCircle, href: '#', color: 'hover:text-primary-white dark:hover:text-primary-black' },
-    { icon: Twitter, href: '#', color: 'hover:text-primary-white dark:hover:text-primary-black' },
+    { icon: Facebook, href: '#', color: 'hover:text-primary-text-dark dark:hover:text-primary-white' },
+    { icon: Linkedin, href: '#', color: 'hover:text-primary-text-dark dark:hover:text-primary-white' },
+    { icon: MessageCircle, href: '#', color: 'hover:text-primary-text-dark dark:hover:text-primary-white' },
+    { icon: Twitter, href: '#', color: 'hover:text-primary-text-dark dark:hover:text-primary-white' },
   ]
 
   const containerVariants = {
@@ -59,7 +59,7 @@ export default function Footer() {
   }
 
   return (
-    <footer id="footer" className="relative bg-primary-background-dark text-primary-white overflow-hidden border-t-2 border-primary-black dark:border-primary-white">
+    <footer id="footer" className="relative bg-primary-background-dark text-primary-text-dark overflow-hidden border-t-2 border-primary-black dark:border-primary-white">
       {/* Gradient Background Lines */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-black via-primary-text-secondary to-primary-black dark:from-primary-white dark:via-primary-text-secondary-dark dark:to-primary-white" />
@@ -108,7 +108,7 @@ export default function Footer() {
 
           {/* Quick Links - Company */}
           <motion.div variants={itemVariants}>
-            <h4 className="text-lg font-bold mb-4 text-primary-white">
+            <h4 className="text-lg font-bold mb-4 text-primary-text-dark">
               Company
             </h4>
             <ul className="space-y-2">
@@ -116,7 +116,7 @@ export default function Footer() {
                 <li key={index}>
                   <motion.a
                     href={link.href}
-                    className="text-primary-text-secondary-dark hover:text-primary-white transition-colors duration-300 hover-underline"
+                    className="text-primary-text-secondary-dark hover:text-primary-text-dark transition-colors duration-300 hover-underline"
                     whileHover={{ x: 5 }}
                   >
                     {link.name}
@@ -128,7 +128,7 @@ export default function Footer() {
 
           {/* Quick Links - For Students */}
           <motion.div variants={itemVariants}>
-            <h4 className="text-lg font-bold mb-4 text-primary-white">
+            <h4 className="text-lg font-bold mb-4 text-primary-text-dark">
               For Students
             </h4>
             <ul className="space-y-2">
@@ -136,7 +136,7 @@ export default function Footer() {
                 <li key={index}>
                   <motion.a
                     href={link.href}
-                    className="text-primary-text-secondary-dark hover:text-primary-white transition-colors duration-300 hover-underline"
+                    className="text-primary-text-secondary-dark hover:text-primary-text-dark transition-colors duration-300 hover-underline"
                     whileHover={{ x: 5 }}
                   >
                     {link.name}
@@ -148,7 +148,7 @@ export default function Footer() {
 
           {/* Quick Links - For Teachers */}
           <motion.div variants={itemVariants}>
-            <h4 className="text-lg font-bold mb-4 text-primary-white">
+            <h4 className="text-lg font-bold mb-4 text-primary-text-dark">
               For Teachers
             </h4>
             <ul className="space-y-2">
@@ -156,7 +156,7 @@ export default function Footer() {
                 <li key={index}>
                   <motion.a
                     href={link.href}
-                    className="text-primary-text-secondary-dark hover:text-primary-white transition-colors duration-300 hover-underline"
+                    className="text-primary-text-secondary-dark hover:text-primary-text-dark transition-colors duration-300 hover-underline"
                     whileHover={{ x: 5 }}
                   >
                     {link.name}
@@ -168,7 +168,7 @@ export default function Footer() {
 
           {/* Quick Links - Support */}
           <motion.div variants={itemVariants}>
-            <h4 className="text-lg font-bold mb-4 text-primary-white">
+            <h4 className="text-lg font-bold mb-4 text-primary-text-dark">
               Support
             </h4>
             <ul className="space-y-2">
@@ -176,7 +176,7 @@ export default function Footer() {
                 <li key={index}>
                   <motion.a
                     href={link.href}
-                    className="text-primary-text-secondary-dark hover:text-primary-white transition-colors duration-300 hover-underline"
+                    className="text-primary-text-secondary-dark hover:text-primary-text-dark transition-colors duration-300 hover-underline"
                     whileHover={{ x: 5 }}
                   >
                     {link.name}
