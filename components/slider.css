@@ -1,0 +1,14 @@
+.carousel-item-wrapper {
+  flex: 1;
+  transition: all 0.5s ease-in-out;
+  min-width: 200px;
+}
+
+.carousel-item-wrapper:hover {
+  flex: 2;
+}
+
+.carousel-container {
+  display: flex;
+  gap: 1rem;
+}

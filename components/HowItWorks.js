@@ -352,13 +352,13 @@ export default function HowItWorks() {
                             }}
                           />
 
-                          <motion.div
+                          {/* <motion.div
                             className="text-9xl relative z-10"
                             whileHover={{ scale: 1.1, rotate: 10 }}
                             transition={{ type: "spring", stiffness: 300 }}
                           >
                             {index === 0 ? "🔍" : index === 1 ? "💬" : "📚"}
-                          </motion.div>
+                          </motion.div> */}
                         </div>
 
                         {/* Floating particles */}

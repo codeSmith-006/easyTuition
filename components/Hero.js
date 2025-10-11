@@ -1,154 +1,159 @@
-'use client'
+"use client";
 
-import { useState, useEffect } from 'react'
-import { motion, useAnimation } from 'framer-motion'
-import { Search, GraduationCap, BookOpen, Calculator, Award, Users, CheckCircle, DollarSign, Clock, MapPin, ChevronDown } from 'lucide-react'
-import { Select, Input, Button } from 'antd'
-
-const { Option } = Select
+import { useState, useEffect } from "react";
+import { useForm } from "react-hook-form";
+import { motion } from "framer-motion";
+import {
+  Search,
+  GraduationCap,
+  BookOpen,
+  Calculator,
+  Award,
+  Users,
+  CheckCircle,
+  DollarSign,
+  Clock,
+  MapPin,
+  ChevronDown,
+} from "lucide-react";
+import { Select, Input } from "antd";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import "./slider.css";
+const { Option } = Select;
 
 export default function Hero() {
-  const [typedText, setTypedText] = useState('')
-  const fullText = 'Find the Right Teacher, Every Time'
-  const [showCursor, setShowCursor] = useState(true)
-  const [searchFocused, setSearchFocused] = useState(false)
+  const [typedText, setTypedText] = useState("");
+  const fullText = "Find the Right Teacher, Every Time";
+  const [showCursor, setShowCursor] = useState(true);
+  const [searchFocused, setSearchFocused] = useState(false);
+
+  // ✅ React Hook Form setup
+  const { handleSubmit, setValue, watch, reset } = useForm({
+    defaultValues: {
+      subject: "",
+      level: "",
+      location: "",
+    },
+  });
+
+  const onSubmit = (data) => {
+    console.log("Search Data:", data);
+  };
 
   useEffect(() => {
-    let currentIndex = 0
+    let currentIndex = 0;
     const typingInterval = setInterval(() => {
       if (currentIndex <= fullText.length) {
-        setTypedText(fullText.slice(0, currentIndex))
-        currentIndex++
+        setTypedText(fullText.slice(0, currentIndex));
+        currentIndex++;
       } else {
-        clearInterval(typingInterval)
-        setShowCursor(false)
+        clearInterval(typingInterval);
+        setShowCursor(false);
       }
-    }, 80)
+    }, 80);
+    return () => clearInterval(typingInterval);
+  }, []);
 
-    return () => clearInterval(typingInterval)
-  }, [])
-
-  // Floating particles data
-  const floatingParticles = [
-    { Icon: BookOpen, delay: 0, x: '10%', y: '20%', size: 40 },
-    { Icon: Calculator, delay: 0.5, x: '85%', y: '15%', size: 35 },
-    { Icon: GraduationCap, delay: 1, x: '15%', y: '70%', size: 45 },
-    { Icon: Award, delay: 1.5, x: '80%', y: '75%', size: 38 },
-    { Icon: Users, delay: 2, x: '50%', y: '10%', size: 32 },
-  ]
-
-  // Statistics data with animation
-  const statistics = [
-    { value: '500+', label: 'Verified Tutors', icon: GraduationCap, delay: 0.5 },
-    { value: '1,200+', label: 'Happy Students', icon: Users, delay: 0.7 },
-    { value: 'Live', label: 'Classes Available', icon: Award, delay: 0.9 },
-  ]
-
-  // Trust badges
-  const trustBadges = [
-    { icon: CheckCircle, text: 'Verified Teachers', color: 'text-primary-yellow dark:text-primary-yellow-light' },
-    { icon: DollarSign, text: 'Affordable Tuitions', color: 'text-primary-yellow dark:text-primary-yellow-light' },
-    { icon: Clock, text: 'Flexible Scheduling', color: 'text-primary-yellow dark:text-primary-yellow-light' },
-  ]
-
+  // Animations
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.2,
-      },
+      transition: { staggerChildren: 0.15, delayChildren: 0.2 },
     },
-  }
+  };
 
   const slideInLeft = {
     hidden: { opacity: 0, x: -100 },
     visible: {
       opacity: 1,
       x: 0,
-      transition: { type: 'spring', stiffness: 80, damping: 15 },
+      transition: { type: "spring", stiffness: 80, damping: 15 },
     },
-  }
+  };
 
   const slideInRight = {
     hidden: { opacity: 0, x: 100 },
     visible: {
       opacity: 1,
       x: 0,
-      transition: { type: 'spring', stiffness: 80, damping: 15 },
+      transition: { type: "spring", stiffness: 80, damping: 15 },
     },
-  }
+  };
+
+  const responsive = {
+    all: {
+      breakpoint: { max: 4000, min: 0 },
+      items: 1,
+    },
+  };
+
+  const slides = [
+    {
+      img: "https://images.unsplash.com/photo-1606761568499-6a0b5b0c8f63?auto=format&fit=crop&w=800&q=80",
+      caption: "Focused Learning Session",
+    },
+    {
+      img: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80",
+      caption: "Collaborative Study Group",
+    },
+    {
+      img: "https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&w=800&q=80",
+      caption: "Coding from Home Setup",
+    },
+    {
+      img: "https://images.unsplash.com/photo-1587614382346-4ec1e4e2de62?auto=format&fit=crop&w=800&q=80",
+      caption: "Creative Student Workspace",
+    },
+  ];
+
+  // Trust badges
+  const trustBadges = [
+    {
+      icon: CheckCircle,
+      text: "Verified Teachers",
+      color: "text-primary-yellow dark:text-primary-yellow-light",
+    },
+    {
+      icon: DollarSign,
+      text: "Affordable Tuitions",
+      color: "text-primary-yellow dark:text-primary-yellow-light",
+    },
+    {
+      icon: Clock,
+      text: "Flexible Scheduling",
+      color: "text-primary-yellow dark:text-primary-yellow-light",
+    },
+  ];
+
+  // Statistics data with animation
+  const statistics = [
+    {
+      value: "500+",
+      label: "Verified Tutors",
+      icon: GraduationCap,
+      delay: 0.5,
+    },
+    { value: "1,200+", label: "Happy Students", icon: Users, delay: 0.7 },
+  ];
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-gradient-light dark:bg-gradient-dark">
-      {/* Animated Background Particles */}
-      <div className="absolute inset-0 overflow-hidden">
-        {floatingParticles.map(({ Icon, delay, x, y, size }, index) => (
-          <motion.div
-            key={index}
-            className="absolute text-primary-yellow dark:text-primary-yellow-light opacity-10"
-            style={{ left: x, top: y }}
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{
-              opacity: [0.05, 0.15, 0.05],
-              scale: [1, 1.2, 1],
-              y: [0, -30, 0],
-              rotate: [0, 180, 360],
-            }}
-            transition={{
-              delay,
-              duration: 6,
-              repeat: Infinity,
-              repeatType: 'reverse',
-              ease: 'easeInOut',
-            }}
-          >
-            <Icon size={size} />
-          </motion.div>
-        ))}
-        
-        {/* Gradient Orbs */}
-        <motion.div
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-yellow dark:bg-primary-yellow-light rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-20 dark:opacity-10"
-          animate={{
-            scale: [1, 1.3, 1],
-            x: [0, 100, 0],
-            y: [0, 50, 0],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            repeatType: 'reverse',
-          }}
-        />
-        <motion.div
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary-yellow-light dark:bg-primary-yellow rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-20 dark:opacity-10"
-          animate={{
-            scale: [1, 1.4, 1],
-            x: [0, -100, 0],
-            y: [0, -50, 0],
-          }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-            repeatType: 'reverse',
-          }}
-        />
-      </div>
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-gradient-light dark:bg-gradient-dark"
+    >
+      {/* Background icons omitted for brevity */}
 
-      {/* Main Content - Split Screen Layout */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
-          
-          {/* Left Side - Content */}
+          {/* LEFT SIDE */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate="visible"
             className="text-center lg:text-left"
           >
-            {/* Headline with Typing Effect */}
             <motion.h1
               variants={slideInLeft}
               className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-gray-900 dark:text-slate-100"
@@ -159,19 +164,22 @@ export default function Hero() {
               </span>
             </motion.h1>
 
-            {/* Subheading */}
             <motion.p
               variants={slideInLeft}
               className="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-8 leading-relaxed"
             >
-              Discover qualified tutors, book personalized sessions, and achieve your learning goals with expert guidance tailored just for you.
+              Discover qualified tutors, book personalized sessions, and achieve
+              your learning goals with expert guidance tailored just for you.
             </motion.p>
 
-            {/* Search Bar Widget */}
-            <motion.div
+            {/* ✅ Search Bar with React Hook Form */}
+            <motion.form
+              onSubmit={handleSubmit(onSubmit)}
               variants={slideInLeft}
               className={`bg-white dark:bg-primary-charcoal rounded-2xl shadow-2xl p-6 mb-8 border ${
-                searchFocused ? 'border-primary-yellow dark:border-primary-yellow-light' : 'border-slate-300 dark:border-slate-600'
+                searchFocused
+                  ? "border-primary-yellow dark:border-primary-yellow-light"
+                  : "border-slate-300 dark:border-slate-600"
               } transition-all duration-300`}
               whileHover={{ scale: 1.02, y: -2 }}
             >
@@ -180,7 +188,7 @@ export default function Hero() {
                   placeholder="Subject"
                   size="large"
                   suffixIcon={<ChevronDown className="w-4 h-4" />}
-                  className="w-full"
+                  onChange={(value) => setValue("subject", value)}
                   onFocus={() => setSearchFocused(true)}
                   onBlur={() => setSearchFocused(false)}
                 >
@@ -190,12 +198,12 @@ export default function Hero() {
                   <Option value="physics">Physics</Option>
                   <Option value="chemistry">Chemistry</Option>
                 </Select>
-                
+
                 <Select
                   placeholder="Class Level"
                   size="large"
                   suffixIcon={<ChevronDown className="w-4 h-4" />}
-                  className="w-full"
+                  onChange={(value) => setValue("level", value)}
                   onFocus={() => setSearchFocused(true)}
                   onBlur={() => setSearchFocused(false)}
                 >
@@ -205,17 +213,19 @@ export default function Hero() {
                   <Option value="11-12">Class 11-12</Option>
                   <Option value="college">College</Option>
                 </Select>
-                
+
                 <Input
                   placeholder="Location"
                   size="large"
                   prefix={<MapPin className="w-4 h-4 text-gray-400" />}
+                  onChange={(e) => setValue("location", e.target.value)}
                   onFocus={() => setSearchFocused(true)}
                   onBlur={() => setSearchFocused(false)}
                 />
               </div>
-              
+
               <motion.button
+                type="submit"
                 className="w-full mt-4 bg-primary-yellow text-primary-charcoal border border-primary-charcoal dark:bg-transparent dark:border-primary-yellow-light dark:text-primary-yellow-light hover:bg-primary-yellow-dark dark:hover:bg-primary-yellow-light/10 font-semibold py-3 px-6 rounded-xl flex items-center justify-center space-x-2 transition-all"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -223,7 +233,7 @@ export default function Hero() {
                 <Search className="w-5 h-5" />
                 <span>Search Tutors</span>
               </motion.button>
-            </motion.div>
+            </motion.form>
 
             {/* Trust Badges */}
             <motion.div
@@ -231,12 +241,15 @@ export default function Hero() {
               className="flex flex-wrap gap-4 justify-center lg:justify-start mb-8"
             >
               {trustBadges.map((badge, index) => {
-                const Icon = badge.icon
+                const Icon = badge.icon;
                 return (
                   <motion.div
                     key={index}
                     className="flex items-center space-x-2 bg-white/50 dark:bg-primary-charcoal/50 backdrop-blur-sm px-4 py-2 rounded-full border border-slate-300 dark:border-slate-600"
-                    whileHover={{ scale: 1.05, boxShadow: '0 0 20px rgba(250, 204, 21, 0.3)' }}
+                    whileHover={{
+                      scale: 1.05,
+                      boxShadow: "0 0 20px rgba(250, 204, 21, 0.3)",
+                    }}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 1.5 + index * 0.1 }}
@@ -246,7 +259,7 @@ export default function Hero() {
                       {badge.text}
                     </span>
                   </motion.div>
-                )
+                );
               })}
             </motion.div>
 
@@ -298,89 +311,137 @@ export default function Hero() {
               transition={{
                 duration: 5,
                 repeat: Infinity,
-                repeatType: 'reverse',
-                ease: 'easeInOut',
+                repeatType: "reverse",
+                ease: "easeInOut",
               }}
-              className="relative w-full max-w-lg"
+              className="relative w-full max-w-xl"
             >
               {/* Student with Laptop Illustration */}
-              <div className="bg-gradient-to-br from-white/80 to-white/60 dark:from-primary-charcoal/80 dark:to-primary-charcoal-dark/60 backdrop-blur-xl rounded-3xl shadow-2xl p-12 border border-slate-300 dark:border-slate-600">
-                <div className="text-center space-y-6">
-                  <motion.div
-                    animate={{ rotate: [0, 5, -5, 0] }}
-                    transition={{ duration: 3, repeat: Infinity }}
-                    className="text-9xl mb-4"
-                  >
-                    👨‍💻
-                  </motion.div>
-                  <div className="flex items-center justify-center space-x-4">
-                    <motion.div
-                      whileHover={{ scale: 1.1, rotate: 10 }}
-                      className="text-6xl"
+              <div className="bg-gradient-to-br from-white/80 to-white/60 dark:from-primary-charcoal/80 dark:to-primary-charcoal-dark/60 backdrop-blur-xl rounded-3xl shadow-2xl border border-slate-300 dark:border-slate-600">
+                <Carousel
+                  responsive={responsive}
+                  infinite={true}
+                  autoPlay={true}
+                  autoPlaySpeed={3000}
+                  arrows={true}
+                  swipeable={true}
+                  draggable={true}
+                  showDots={true}
+                  transitionDuration={800}
+                  containerClass="carousel-container flex gap-4"
+                  itemClass="carousel-item-wrapper"
+                >
+                  {slides.map((slide, index) => (
+                    <div
+                      key={index}
+                      className="w-full h-80 md:h-96 rounded-2xl overflow-hidden relative flex items-center justify-center transition-all duration-500 ease-in-out hover:scale-110 hover:z-10 hover:shadow-2xl"
                     >
-                      📚
-                    </motion.div>
-                    <motion.div
-                      animate={{ scale: [1, 1.2, 1] }}
-                      transition={{ duration: 2, repeat: Infinity }}
-                      className="text-4xl"
-                    >
-                      ✨
-                    </motion.div>
-                    <motion.div
-                      whileHover={{ scale: 1.1, rotate: -10 }}
-                      className="text-6xl"
-                    >
-                      👨‍🏫
-                    </motion.div>
-                  </div>
-                  <p className="text-lg font-semibold text-gray-700 dark:text-gray-300">
-                    Connect & Learn
-                  </p>
-                </div>
+                      <img
+                        src={slide.img}
+                        alt={slide.caption}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute bottom-5 left-5 bg-black/50 text-white px-4 py-2 rounded-lg">
+                        {slide.caption}
+                      </div>
+                    </div>
+                  ))}
+                </Carousel>
               </div>
 
               {/* Floating Statistics Bubbles */}
               {statistics.map((stat, index) => {
-                const Icon = stat.icon
+                const Icon = stat.icon;
                 return (
                   <motion.div
                     key={index}
-                    className="absolute bg-white dark:bg-primary-charcoal rounded-2xl shadow-xl p-4 border border-slate-300 dark:border-slate-600"
-                    initial={{ opacity: 0, scale: 0, rotate: -180 }}
-                    animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                    className="
+        absolute 
+        bg-white dark:bg-primary-charcoal 
+        rounded-xl shadow-xl 
+        p-3 sm:p-4 
+        border border-slate-300 dark:border-slate-600 
+        w-32 sm:w-40 md:w-48
+      "
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
                     transition={{
-                      type: 'spring',
+                      type: "spring",
                       stiffness: 200,
                       damping: 15,
-                      delay: stat.delay,
                     }}
-                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    whileHover={{ scale: 1.05 }}
                     style={{
-                      top: index === 0 ? '10%' : index === 1 ? '45%' : '80%',
-                      [index % 2 === 0 ? 'left' : 'right']: '-15%',
+                      top: index === 0 ? "8%" : index === 1 ? "45%" : "78%",
+                      [index % 2 === 0 ? "left" : "right"]:
+                        index % 2 === 0
+                          ? "2%" // closer to edge on mobile
+                          : "2%",
                     }}
                   >
-                    <div className="flex items-center space-x-3">
-                      <div className="bg-primary-yellow/20 dark:bg-primary-yellow-light/20 p-2 rounded-lg border border-slate-300 dark:border-slate-600">
-                        <Icon className="w-6 h-6 text-primary-yellow dark:text-primary-yellow-light" />
+                    <div className="flex items-center space-x-2 sm:space-x-3">
+                      <div
+                        className="
+          bg-primary-yellow/20 dark:bg-primary-yellow-light/20 
+          p-1.5 sm:p-2 rounded-lg 
+          border border-slate-300 dark:border-slate-600
+        "
+                      >
+                        <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary-yellow dark:text-primary-yellow-light" />
                       </div>
                       <div>
-                        <p className="text-2xl font-bold text-gray-800 dark:text-white">
+                        <p className="text-lg sm:text-2xl font-bold text-gray-800 dark:text-white">
                           {stat.value}
                         </p>
-                        <p className="text-xs text-gray-600 dark:text-gray-400">
+                        <p className="text-[10px] sm:text-xs text-gray-600 dark:text-gray-400">
                           {stat.label}
                         </p>
                       </div>
                     </div>
                   </motion.div>
-                )
+                );
               })}
             </motion.div>
+          </motion.div>
+          <motion.div
+            variants={slideInRight}
+            initial="hidden"
+            animate="visible"
+            className="relative flex items-center justify-center"
+          >
+            <div className="bg-gradient-to-br from-white/80 to-white/60 dark:from-primary-charcoal/80 dark:to-primary-charcoal-dark/60 backdrop-blur-xl rounded-3xl shadow-2xl border border-slate-300 dark:border-slate-600">
+              <Carousel
+                responsive={responsive}
+                infinite
+                autoPlay
+                autoPlaySpeed={3000}
+                arrows
+                swipeable
+                draggable
+                showDots
+                transitionDuration={800}
+                containerClass="carousel-container"
+              >
+                {slides.map((slide, i) => (
+                  <div
+                    key={i}
+                    className="w-full h-80 md:h-96 rounded-2xl overflow-hidden relative flex items-center justify-center"
+                  >
+                    <img
+                      src={slide.img}
+                      alt={slide.caption}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute bottom-5 left-5 bg-black/50 text-white px-4 py-2 rounded-lg">
+                      {slide.caption}
+                    </div>
+                  </div>
+                ))}
+              </Carousel>
+            </div>
           </motion.div>
         </div>
       </div>
     </section>
-  )
+  );
 }

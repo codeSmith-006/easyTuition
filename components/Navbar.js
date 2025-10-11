@@ -5,6 +5,7 @@ import { motion, useScroll, AnimatePresence } from "framer-motion";
 import { Switch, Drawer, Button } from "antd";
 import { Sun, Moon, GraduationCap, Menu, X, Sparkles } from "lucide-react";
 import { useTheme } from "@/contexts/ThemeContext";
+import { FaArrowRight } from "react-icons/fa";
 
 export default function Navbar() {
   const { isDarkMode, toggleTheme } = useTheme();
@@ -102,31 +103,55 @@ export default function Navbar() {
 
             {/* Desktop Navigation Items */}
             <div className="hidden md:flex items-center space-x-8">
-              {navItems.map((item, index) => (
-                <motion.a
-                  key={item.name}
-                  href={item.href}
-                  className="relative text-slate-700 dark:text-slate-200 hover:text-primary-yellow dark:hover:text-primary-yellow-light font-medium cursor-pointer group"
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ y: -2 }}
-                >
-                  {item.name}
-                  <motion.span
-                    className="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-primary-yellow to-primary-yellow-light"
-                    initial={{ width: 0 }}
-                    whileHover={{ width: "100%" }}
-                    transition={{ duration: 0.3 }}
-                  />
-                  <motion.span
-                    className="absolute inset-0 bg-primary-yellow/10 dark:bg-primary-yellow-light/10 rounded-lg -z-10"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileHover={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.2 }}
-                  />
-                </motion.a>
-              ))}
+              {navItems.map((item) => {
+                const showArrow =
+                  item.name === "Find Teacher" ||
+                  item.name === "Join as Teacher";
+
+                return (
+                  <motion.a
+                    key={item.name}
+                    href={item.href}
+                    className="relative group flex items-center space-x-1 text-slate-700 dark:text-slate-200 
+             hover:text-primary-yellow dark:hover:text-primary-yellow-light font-medium cursor-pointer"
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4 }}
+                    whileHover={{ x: 2 }}
+                  >
+                    <span>{item.name}</span>
+
+                    {showArrow && (
+                      <motion.span
+                        className="inline-flex items-center opacity-0 -translate-x-2 
+                 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300"
+                        animate={{ rotate: 0 }}
+                        whileInView={{ rotate: 0 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        {/* Rotate 45° only when parent is hovered */}
+                        <FaArrowRight className="text-sm text-primary-yellow dark:text-primary-yellow-light group-hover:-rotate-45 transition-transform duration-300" />
+                      </motion.span>
+                    )}
+
+                    {/* underline animation */}
+                    <motion.span
+                      className="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-primary-yellow to-primary-yellow-light"
+                      initial={{ width: 0 }}
+                      whileHover={{ width: "100%" }}
+                      transition={{ duration: 0.3 }}
+                    />
+
+                    {/* subtle hover background */}
+                    <motion.span
+                      className="absolute inset-0 bg-primary-yellow/10 dark:bg-primary-yellow-light/10 rounded-lg -z-10"
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileHover={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.2 }}
+                    />
+                  </motion.a>
+                );
+              })}
             </div>
 
             {/* Right Side - Theme Toggle & CTA & Mobile Menu */}
