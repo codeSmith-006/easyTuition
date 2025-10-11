@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-yellow: #FACC15;
+  --primary-yellow-dark: #EAB308;
+  --primary-teal: #0D9488;
+  --primary-teal-light: #14B8A6;
+  --primary-teal-dark: #0F766E;
+  --primary-black: #111111;
+  --soft-white: #F5F5F5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0D9488;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #14B8A6;
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(90deg, #FACC15, #0D9488);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass Effect */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(13, 148, 136, 0.2);
+}
+
+.dark .glass-effect {
+  background: rgba(17, 17, 17, 0.8);
+  border: 1px solid rgba(13, 148, 136, 0.3);
+}
+
+/* Card Hover Effect */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(13, 148, 136, 0.3);
+}
+
+/* Button Glow */
+.btn-glow {
+  box-shadow: 0 0 15px rgba(250, 204, 21, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-glow:hover {
+  box-shadow: 0 0 20px rgba(13, 148, 136, 0.5);
+}
+
+/* Page Transitions */
+.page-transition {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Loading Spinner */
+.spinner {
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #0D9488;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Ant Design Overrides */
+.ant-btn-primary {
+  background: #FACC15 !important;
+  border-color: #0D9488 !important;
+  color: #111111 !important;
+}
+
+.ant-btn-primary:hover {
+  background: #0D9488 !important;
+  color: #FACC15 !important;
+}
+
+.dark .ant-modal-content {
+  background-color: #1a1a1a !important;
+}
+
+.dark .ant-select-selector {
+  background-color: #1a1a1a !important;
+  border-color: #334155 !important;
+  color: #f5f5f5 !important;
+}
