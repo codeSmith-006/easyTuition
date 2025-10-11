@@ -39,11 +39,11 @@ export default function HowItWorks() {
         "Real-time availability",
         "Student reviews & ratings",
       ],
-      color: "from-primary-yellow to-primary-yellow-light",
-      accentColor: "text-primary-yellow dark:text-primary-yellow-light",
-      bgColor: "bg-primary-yellow/10 dark:bg-primary-yellow-light/10",
+      color: "from-primary-black to-primary-text-secondary dark:from-primary-white dark:to-primary-text-secondary-dark",
+      accentColor: "text-primary-black dark:text-primary-white",
+      bgColor: "bg-primary-black/10 dark:bg-primary-white/10",
       iconBg:
-        "bg-primary-yellow border border-primary-charcoal dark:border-slate-600",
+        "bg-primary-white border-2 border-primary-black dark:bg-primary-black dark:border-primary-white",
       stats: { value: "500+", label: "Teachers" },
     },
     {
@@ -58,11 +58,11 @@ export default function HowItWorks() {
         "Schedule booking",
         "Price negotiation",
       ],
-      color: "from-primary-yellow to-primary-yellow-light",
-      accentColor: "text-primary-yellow dark:text-primary-yellow-light",
-      bgColor: "bg-primary-yellow/10 dark:bg-primary-yellow-light/10",
+      color: "from-primary-black to-primary-text-secondary dark:from-primary-white dark:to-primary-text-secondary-dark",
+      accentColor: "text-primary-black dark:text-primary-white",
+      bgColor: "bg-primary-black/10 dark:bg-primary-white/10",
       iconBg:
-        "bg-primary-yellow-light border border-primary-charcoal dark:border-slate-600",
+        "bg-primary-white border-2 border-primary-black dark:bg-primary-black dark:border-primary-white",
       stats: { value: "24/7", label: "Support" },
     },
     {
@@ -77,10 +77,10 @@ export default function HowItWorks() {
         "Assignment management",
         "Performance reports",
       ],
-      color: "from-primary-yellow to-primary-yellow-light",
-      accentColor: "text-primary-yellow dark:text-primary-yellow-light",
-      bgColor: "bg-primary-yellow/10 dark:bg-primary-yellow-light/10",
-      iconBg: "bg-primary-yellow border-2 border-black dark:border-white",
+      color: "from-primary-black to-primary-text-secondary dark:from-primary-white dark:to-primary-text-secondary-dark",
+      accentColor: "text-primary-black dark:text-primary-white",
+      bgColor: "bg-primary-black/10 dark:bg-primary-white/10",
+      iconBg: "bg-primary-white border-2 border-primary-black dark:bg-primary-black dark:border-primary-white",
       stats: { value: "98%", label: "Success Rate" },
     },
   ];
@@ -89,12 +89,12 @@ export default function HowItWorks() {
     <section
       id="how-it-works"
       ref={containerRef}
-      className="relative py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-primary-gray-light via-white to-primary-gray-light dark:from-primary-charcoal-dark dark:via-primary-charcoal dark:to-primary-charcoal-dark overflow-hidden"
+      className="relative py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-primary-background via-primary-card to-primary-background dark:from-primary-background-dark dark:via-primary-card-dark dark:to-primary-background-dark overflow-hidden"
     >
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
-          className="absolute top-20 left-10 w-72 h-72 bg-primary-yellow dark:bg-primary-yellow-light rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-20 dark:opacity-10"
+          className="absolute top-20 left-10 w-72 h-72 bg-primary-black dark:bg-primary-white rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-10 dark:opacity-5"
           animate={{
             scale: [1, 1.2, 1],
             x: [0, 50, 0],
@@ -107,7 +107,7 @@ export default function HowItWorks() {
           }}
         />
         <motion.div
-          className="absolute bottom-20 right-10 w-72 h-72 bg-primary-yellow-light dark:bg-primary-yellow rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-20 dark:opacity-10"
+          className="absolute bottom-20 right-10 w-72 h-72 bg-primary-text-secondary dark:bg-primary-text-secondary-dark rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-10 dark:opacity-5"
           animate={{
             scale: [1, 1.3, 1],
             x: [0, -50, 0],
@@ -131,22 +131,22 @@ export default function HowItWorks() {
           transition={{ duration: 0.6 }}
         >
           <motion.div
-            className="inline-flex items-center space-x-2 px-4 py-2 bg-primary-yellow/10 dark:bg-primary-yellow-light/10 border border-slate-300 dark:border-slate-600 rounded-full mb-6"
+            className="inline-flex items-center space-x-2 px-4 py-2 bg-primary-black/10 dark:bg-primary-white/10 border border-primary-border dark:border-primary-border-dark rounded-full mb-6"
             whileHover={{ scale: 1.05 }}
           >
-            <Sparkles className="w-4 h-4 text-primary-yellow dark:text-primary-yellow-light" />
-            <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+            <Sparkles className="w-4 h-4 text-primary-black dark:text-primary-white" />
+            <span className="text-sm font-semibold text-primary-text dark:text-primary-text-dark">
               Simple Process
             </span>
           </motion.div>
 
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-primary-yellow via-primary-yellow-light to-primary-yellow bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary-black via-primary-text-secondary to-primary-black dark:from-primary-white dark:via-primary-text-secondary-dark dark:to-primary-white bg-clip-text text-transparent">
               How It Works
             </span>
           </h2>
 
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-primary-text-secondary dark:text-primary-text-secondary-dark max-w-3xl mx-auto">
             Get started in three simple steps. From finding the perfect tutor to
             achieving your goals, we've made the process seamless and efficient.
           </p>
@@ -155,9 +155,9 @@ export default function HowItWorks() {
         {/* Roadmap Timeline */}
         <div className="relative">
           {/* Vertical Progress Line */}
-          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-1 bg-gray-200 dark:bg-gray-700 transform md:-translate-x-1/2">
+          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-1 bg-primary-border dark:bg-primary-border-dark transform md:-translate-x-1/2">
             <motion.div
-              className="absolute top-0 left-0 right-0 bg-gradient-to-b from-primary-yellow via-primary-yellow-light to-primary-yellow origin-top"
+              className="absolute top-0 left-0 right-0 bg-gradient-to-b from-primary-black via-primary-text-secondary to-primary-black dark:from-primary-white dark:via-primary-text-secondary-dark dark:to-primary-white origin-top"
               style={{ scaleY: smoothProgress }}
             />
           </div>
@@ -193,7 +193,7 @@ export default function HowItWorks() {
                       transition={{ type: "spring", stiffness: 300 }}
                     >
                       <div
-                        className={`relative p-8 rounded-3xl backdrop-blur-xl border ${step.bgColor} border-slate-300 dark:border-slate-600 hover:border-primary-yellow dark:hover:border-primary-yellow-light shadow-xl hover:shadow-2xl transition-all duration-300`}
+                        className={`relative p-8 rounded-3xl backdrop-blur-xl border ${step.bgColor} border-primary-border dark:border-primary-border-dark hover:border-primary-black dark:hover:border-primary-white shadow-xl hover:shadow-2xl transition-all duration-300`}
                       >
                         {/* Decorative corner */}
                         <motion.div
@@ -222,11 +222,11 @@ export default function HowItWorks() {
                           {step.number}
                         </motion.div>
 
-                        <h3 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">
+                        <h3 className="text-3xl font-bold mb-4 text-primary-text dark:text-primary-text-dark">
                           {step.title}
                         </h3>
 
-                        <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+                        <p className="text-primary-text-secondary dark:text-primary-text-secondary-dark leading-relaxed mb-6">
                           {step.description}
                         </p>
 
@@ -250,7 +250,7 @@ export default function HowItWorks() {
                               <CheckCircle2
                                 className={`w-5 h-5 ${step.accentColor}`}
                               />
-                              <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                              <span className="text-sm font-medium text-primary-text dark:text-primary-text-dark">
                                 {feature}
                               </span>
                             </motion.div>
@@ -259,16 +259,16 @@ export default function HowItWorks() {
 
                         {/* Stats Badge */}
                         <motion.div
-                          className={`inline-flex items-center space-x-2 mt-6 px-4 py-2 rounded-full bg-white dark:bg-primary-charcoal border border-slate-300 dark:border-slate-600`}
+                          className={`inline-flex items-center space-x-2 mt-6 px-4 py-2 rounded-full bg-primary-card dark:bg-primary-card-dark border border-primary-border dark:border-primary-border-dark`}
                           whileHover={{ scale: 1.05 }}
                         >
                           <TrendingUp
                             className={`w-4 h-4 ${step.accentColor}`}
                           />
-                          <span className="font-bold text-gray-900 dark:text-white">
+                          <span className="font-bold text-primary-text dark:text-primary-text-dark">
                             {step.stats.value}
                           </span>
-                          <span className="text-xs text-gray-600 dark:text-gray-400">
+                          <span className="text-xs text-primary-text-secondary dark:text-primary-text-secondary-dark">
                             {step.stats.label}
                           </span>
                         </motion.div>
@@ -278,7 +278,7 @@ export default function HowItWorks() {
                     {/* Center Circle with Icon */}
                     <div className="absolute left-8 md:left-1/2 transform -translate-x-1/2 z-20">
                       <motion.div
-                        className={`relative w-24 h-24 rounded-3xl ${step.iconBg} shadow-2xl flex items-center justify-center text-primary-charcoal dark:text-primary-charcoal`}
+                        className={`relative w-24 h-24 rounded-3xl ${step.iconBg} shadow-2xl flex items-center justify-center text-primary-black dark:text-primary-white`}
                         initial={{ scale: 0, rotate: -180 }}
                         whileInView={{ scale: 1, rotate: 0 }}
                         viewport={{ once: true }}
@@ -291,7 +291,7 @@ export default function HowItWorks() {
                         whileHover={{ scale: 1.15, rotate: 360 }}
                       >
                         <Icon
-                          className="w-12 h-12 text-white"
+                          className="w-12 h-12 text-primary-black dark:text-primary-white"
                           strokeWidth={2.5}
                         />
 
@@ -436,7 +436,7 @@ export default function HowItWorks() {
 
             {/* Animated shine effect */}
             <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-20"
+              className="absolute inset-0 bg-gradient-to-r from-transparent via-primary-white to-transparent dark:via-primary-black opacity-0 group-hover:opacity-20"
               animate={{
                 x: ["-100%", "100%"],
               }}

@@ -25,7 +25,10 @@ export default function ClientLayout({ children }) {
       theme={{
         algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
         token: {
-          colorPrimary: '#2563EB',
+          colorPrimary: '#111111',
+          colorBgBase: isDarkMode ? '#1E1E1E' : '#FFFFFF',
+          colorTextBase: isDarkMode ? '#E5E5E5' : '#111111',
+          colorBorder: isDarkMode ? '#2C2C2C' : '#C1C1C1',
           borderRadius: 8,
         },
       }}

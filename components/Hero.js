@@ -113,17 +113,17 @@ export default function Hero() {
     {
       icon: CheckCircle,
       text: "Verified Teachers",
-      color: "text-primary-yellow dark:text-primary-yellow-light",
+      color: "text-primary-black dark:text-primary-white",
     },
     {
       icon: DollarSign,
       text: "Affordable Tuitions",
-      color: "text-primary-yellow dark:text-primary-yellow-light",
+      color: "text-primary-black dark:text-primary-white",
     },
     {
       icon: Clock,
       text: "Flexible Scheduling",
-      color: "text-primary-yellow dark:text-primary-yellow-light",
+      color: "text-primary-black dark:text-primary-white",
     },
   ];
 
@@ -156,9 +156,9 @@ export default function Hero() {
           >
             <motion.h1
               variants={slideInLeft}
-              className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-gray-900 dark:text-slate-100"
+              className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-primary-text dark:text-primary-text-dark"
             >
-              <span className="bg-gradient-to-r from-primary-yellow to-primary-yellow-light dark:from-primary-yellow-light dark:to-primary-yellow bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-primary-black to-primary-text-secondary dark:from-primary-white dark:to-primary-text-secondary-dark bg-clip-text text-transparent">
                 {typedText}
                 {showCursor && <span className="typing-cursor">|</span>}
               </span>
@@ -166,7 +166,7 @@ export default function Hero() {
 
             <motion.p
               variants={slideInLeft}
-              className="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-8 leading-relaxed"
+              className="text-lg md:text-xl text-primary-text-secondary dark:text-primary-text-secondary-dark mb-8 leading-relaxed"
             >
               Discover qualified tutors, book personalized sessions, and achieve
               your learning goals with expert guidance tailored just for you.
@@ -176,10 +176,10 @@ export default function Hero() {
             <motion.form
               onSubmit={handleSubmit(onSubmit)}
               variants={slideInLeft}
-              className={`bg-white dark:bg-primary-charcoal rounded-2xl shadow-2xl p-6 mb-8 border ${
+              className={`bg-primary-card dark:bg-primary-card-dark rounded-2xl shadow-2xl p-6 mb-8 border ${
                 searchFocused
-                  ? "border-primary-yellow dark:border-primary-yellow-light"
-                  : "border-slate-300 dark:border-slate-600"
+                  ? "border-primary-black dark:border-primary-white"
+                  : "border-primary-border dark:border-primary-border-dark"
               } transition-all duration-300`}
               whileHover={{ scale: 1.02, y: -2 }}
             >
@@ -226,7 +226,7 @@ export default function Hero() {
 
               <motion.button
                 type="submit"
-                className="w-full mt-4 bg-primary-yellow text-primary-charcoal border border-primary-charcoal dark:bg-transparent dark:border-primary-yellow-light dark:text-primary-yellow-light hover:bg-primary-yellow-dark dark:hover:bg-primary-yellow-light/10 font-semibold py-3 px-6 rounded-xl flex items-center justify-center space-x-2 transition-all"
+                className="w-full mt-4 bg-primary-white text-primary-black border-2 border-primary-black dark:bg-primary-black dark:border-primary-white dark:text-primary-white hover:opacity-90 font-semibold py-3 px-6 rounded-xl flex items-center justify-center space-x-2 transition-all"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -245,17 +245,17 @@ export default function Hero() {
                 return (
                   <motion.div
                     key={index}
-                    className="flex items-center space-x-2 bg-white/50 dark:bg-primary-charcoal/50 backdrop-blur-sm px-4 py-2 rounded-full border border-slate-300 dark:border-slate-600"
+                    className="flex items-center space-x-2 bg-primary-white/50 dark:bg-primary-card-dark/50 backdrop-blur-sm px-4 py-2 rounded-full border border-primary-border dark:border-primary-border-dark"
                     whileHover={{
                       scale: 1.05,
-                      boxShadow: "0 0 20px rgba(250, 204, 21, 0.3)",
+                      boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
                     }}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 1.5 + index * 0.1 }}
                   >
                     <Icon className={`w-5 h-5 ${badge.color}`} />
-                    <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                    <span className="text-sm font-medium text-primary-text dark:text-primary-text-dark">
                       {badge.text}
                     </span>
                   </motion.div>
@@ -271,16 +271,16 @@ export default function Hero() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="group relative px-8 py-4 bg-primary-yellow text-primary-charcoal border border-primary-charcoal dark:bg-transparent dark:border-primary-yellow-light dark:text-primary-yellow-light hover:bg-primary-yellow-dark dark:hover:bg-primary-yellow-light/10 rounded-xl font-semibold text-lg shadow-lg overflow-hidden transition-all"
+                className="group relative px-8 py-4 bg-primary-white text-primary-black border-2 border-primary-black dark:bg-primary-black dark:border-primary-white dark:text-primary-white hover:opacity-90 rounded-xl font-semibold text-lg shadow-lg overflow-hidden transition-all"
               >
                 <span className="relative z-10 flex items-center justify-center space-x-2">
                   <Search className="w-5 h-5" />
                   <span>Find Tuition</span>
                 </span>
                 <motion.div
-                  className="absolute inset-0 bg-primary-yellow-light dark:bg-primary-yellow"
+                  className="absolute inset-0 bg-gray-100 dark:bg-gray-900"
                   initial={{ scale: 0, opacity: 0 }}
-                  whileHover={{ scale: 1, opacity: 1 }}
+                  whileHover={{ scale: 1, opacity: 0.2 }}
                   transition={{ duration: 0.3 }}
                 />
               </motion.button>
@@ -288,7 +288,7 @@ export default function Hero() {
               <motion.button
                 whileHover={{ scale: 1.05, x: 5 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 border border-slate-400 dark:border-slate-500 text-slate-700 dark:text-slate-200 rounded-xl font-semibold text-lg hover:bg-primary-yellow hover:text-primary-charcoal hover:border-primary-yellow dark:hover:bg-primary-yellow-light/10 dark:hover:border-primary-yellow-light transition-all flex items-center justify-center space-x-2"
+                className="px-8 py-4 border-2 border-primary-border dark:border-primary-border-dark text-primary-text dark:text-primary-text-dark rounded-xl font-semibold text-lg hover:bg-primary-black hover:text-primary-white hover:border-primary-black dark:hover:bg-primary-white dark:hover:text-primary-black dark:hover:border-primary-white transition-all flex items-center justify-center space-x-2"
               >
                 <GraduationCap className="w-5 h-5" />
                 <span>Become a Teacher</span>
@@ -317,7 +317,7 @@ export default function Hero() {
               className="relative w-full max-w-xl"
             >
               {/* Student with Laptop Illustration */}
-              <div className="bg-gradient-to-br from-white/80 to-white/60 dark:from-primary-charcoal/80 dark:to-primary-charcoal-dark/60 backdrop-blur-xl rounded-3xl shadow-2xl border border-slate-300 dark:border-slate-600">
+              <div className="bg-gradient-to-br from-primary-white/80 to-primary-white/60 dark:from-primary-card-dark/80 dark:to-primary-background-dark/60 backdrop-blur-xl rounded-3xl shadow-2xl border border-primary-border dark:border-primary-border-dark">
                 <Carousel
                   responsive={responsive}
                   infinite={true}
@@ -357,10 +357,10 @@ export default function Hero() {
                     key={index}
                     className="
         absolute 
-        bg-white dark:bg-primary-charcoal 
+        bg-primary-card dark:bg-primary-card-dark 
         rounded-xl shadow-xl 
         p-3 sm:p-4 
-        border border-slate-300 dark:border-slate-600 
+        border border-primary-border dark:border-primary-border-dark 
         w-32 sm:w-40 md:w-48
       "
                     initial={{ opacity: 0, scale: 0 }}
@@ -382,18 +382,18 @@ export default function Hero() {
                     <div className="flex items-center space-x-2 sm:space-x-3">
                       <div
                         className="
-          bg-primary-yellow/20 dark:bg-primary-yellow-light/20 
+          bg-primary-black/10 dark:bg-primary-white/10 
           p-1.5 sm:p-2 rounded-lg 
-          border border-slate-300 dark:border-slate-600
+          border border-primary-border dark:border-primary-border-dark
         "
                       >
-                        <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary-yellow dark:text-primary-yellow-light" />
+                        <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary-black dark:text-primary-white" />
                       </div>
                       <div>
-                        <p className="text-lg sm:text-2xl font-bold text-gray-800 dark:text-white">
+                        <p className="text-lg sm:text-2xl font-bold text-primary-text dark:text-primary-text-dark">
                           {stat.value}
                         </p>
-                        <p className="text-[10px] sm:text-xs text-gray-600 dark:text-gray-400">
+                        <p className="text-[10px] sm:text-xs text-primary-text-secondary dark:text-primary-text-secondary-dark">
                           {stat.label}
                         </p>
                       </div>
@@ -409,7 +409,7 @@ export default function Hero() {
             animate="visible"
             className="relative flex items-center justify-center"
           >
-            <div className="bg-gradient-to-br from-white/80 to-white/60 dark:from-primary-charcoal/80 dark:to-primary-charcoal-dark/60 backdrop-blur-xl rounded-3xl shadow-2xl border border-slate-300 dark:border-slate-600">
+            <div className="bg-gradient-to-br from-primary-white/80 to-primary-white/60 dark:from-primary-card-dark/80 dark:to-primary-background-dark/60 backdrop-blur-xl rounded-3xl shadow-2xl border border-primary-border dark:border-primary-border-dark">
               <Carousel
                 responsive={responsive}
                 infinite
