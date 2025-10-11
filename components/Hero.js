@@ -143,9 +143,21 @@ export default function Hero() {
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-gradient-light dark:bg-gradient-dark"
     >
+      {/* 🔹 Background Image Overlay */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-100 mix-blend-overlay z-[1]"
+        style={{
+          backgroundImage:
+            "url('https://craftlakecity.com/wp-content/uploads/2020/04/STEM-Background.jpg')",
+        }}
+      ></div>
+
+      {/* 🔹 Optional dark layer for better contrast */}
+      {/* <div className="absolute inset-0 bg-black/30 z-[2]" /> */}
+
       {/* Background icons omitted for brevity */}
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div className="relative z-[3] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
           {/* LEFT SIDE */}
           <motion.div
@@ -176,7 +188,7 @@ export default function Hero() {
             <motion.form
               onSubmit={handleSubmit(onSubmit)}
               variants={slideInLeft}
-              className={`bg-primary-card dark:bg-primary-card-dark rounded-2xl shadow-2xl p-6 mb-8 border ${
+              className={`bg-[#EEF4F4]  dark:bg-primary-card-dark rounded-2xl shadow-2xl p-6 mb-8 border ${
                 searchFocused
                   ? "border-primary-black dark:border-primary-white"
                   : "border-primary-border dark:border-primary-border-dark"
