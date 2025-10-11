@@ -92,19 +92,19 @@ export default function Hero() {
 
   const slides = [
     {
-      img: "https://images.unsplash.com/photo-1606761568499-6a0b5b0c8f63?auto=format&fit=crop&w=800&q=80",
+      img: "https://avatars.mds.yandex.net/i?id=502c200fd909a43ab0acd7d703b9d6bd67dcfd45-9702242-images-thumbs&n=13",
       caption: "Focused Learning Session",
     },
     {
-      img: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80",
+      img: "https://avatars.mds.yandex.net/i?id=cbf302cae842c42ecae683ef0f4144e9c37a6fed-5233265-images-thumbs&n=13",
       caption: "Collaborative Study Group",
     },
     {
-      img: "https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&w=800&q=80",
+      img: "https://avatars.mds.yandex.net/i?id=163ad91b093630c927607bb848eee3968ed22b12-5131517-images-thumbs&n=13",
       caption: "Coding from Home Setup",
     },
     {
-      img: "https://images.unsplash.com/photo-1587614382346-4ec1e4e2de62?auto=format&fit=crop&w=800&q=80",
+      img: "https://avatars.mds.yandex.net/i?id=6ec63bbd29a1c7f62a71424e421ad2fcbe8426a9-5221488-images-thumbs&n=13",
       caption: "Creative Student Workspace",
     },
   ];

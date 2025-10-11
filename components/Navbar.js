@@ -123,7 +123,7 @@ export default function Navbar() {
 
                     {showArrow && (
                       <motion.span
-                        className="inline-flex items-center opacity-0 -translate-x-2 
+                        className="inline-flex  items-center opacity-0 -translate-x-2 
                  group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300"
                         animate={{ rotate: 0 }}
                         whileInView={{ rotate: 0 }}
