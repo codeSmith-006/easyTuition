@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import {
   Search,
   GraduationCap,
@@ -336,10 +337,13 @@ export default function Hero() {
                       key={index}
                       className="w-full h-80 md:h-96 rounded-2xl overflow-hidden relative flex items-center justify-center transition-all duration-500 ease-in-out hover:scale-110 hover:z-10 hover:shadow-2xl"
                     >
-                      <img
+                      <Image
                         src={slide.img}
                         alt={slide.caption}
+                        width={800}
+                        height={600}
                         className="w-full h-full object-cover"
+                        priority={index === 0}
                       />
                       <div className="absolute bottom-5 left-5 bg-black/50 text-white px-4 py-2 rounded-lg">
                         {slide.caption}
@@ -427,10 +431,13 @@ export default function Hero() {
                     key={i}
                     className="w-full h-80 md:h-96 rounded-2xl overflow-hidden relative flex items-center justify-center"
                   >
-                    <img
+                    <Image
                       src={slide.img}
                       alt={slide.caption}
+                      width={800}
+                      height={600}
                       className="w-full h-full object-cover"
+                      priority={i === 0}
                     />
                     <div className="absolute bottom-5 left-5 bg-black/50 text-white px-4 py-2 rounded-lg">
                       {slide.caption}

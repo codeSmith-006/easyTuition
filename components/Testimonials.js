@@ -168,7 +168,7 @@ export default function Testimonials() {
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.2 }}
                       >
-                        "{testimonial.text}"
+                        &quot;{testimonial.text}&quot;
                       </motion.p>
 
                       {/* Decorative Stars */}
